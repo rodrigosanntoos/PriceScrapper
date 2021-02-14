@@ -1,14 +1,17 @@
-const scraperKabum = require('./Scrapers/ScraperKabumVGA');
-const scraperTerabyte = require('./Scrapers/ScraperTerabyteVGA')
-const scraperPichau = require('./Scrapers/ScraperPichauVGA');
+const scraperKabumVGA = require('./Scrapers/ScraperKabumVGA');
+const scraperTerabyteVGA = require('./Scrapers/ScraperTerabyteVGA')
+const scraperPichauVGA = require('./Scrapers/ScraperPichauVGA');
+const scraperGKInfoStoreVGA = require('./Scrapers/ScraperGKInfoStoreVGA');
+
 async function scrapeAll(browserInstance) {
     let browser;
     let results
     try {
         browser = await browserInstance;
-        results = await scraperTerabyte.scraper(browser);
-        results = results.concat(await scraperKabum.scraper(browser));
-        results = results.concat(await scraperPichau.scraper(browser));
+        results = await scraperTerabyteVGA.scraper(browser);
+        results = results.concat(await scraperKabumVGA.scraper(browser));
+        results = results.concat(await scraperPichauVGA.scraper(browser));
+        results = results.concat(await scraperGKInfoStoreVGA.scraper(browser));
 
         await browser.close();
 
