@@ -25,6 +25,7 @@ const scraperObject = {
 
                         //isAvailable = Verifica se existem classes que indicam item indisponível
                         const isAvailable = result.getElementsByClassName('unavailable').length === 0;
+                        const expressoesRemovidas = ['Quadro', 'Osprey', 'Conferencia', 'Titan', 'Expansora', 'Screen Share', 'Radeon Pro', 'Microfone', 'Suporte', 'GT 710', 'GT 730', 'R5 2020', 'Cabo de extensão', 'G210', 'R7 240', 'GT 1030', ' 1GB', ' 2GB', ' 3GB', ' 4GB', '1050Ti', '1050', 'RX 550 ', 'Case para', 'Conferência'];
 
                         //Se um item não está disponível, indica que é a última página de resultados
                         if (!isAvailable) {
@@ -41,14 +42,16 @@ const scraperObject = {
                             const productValue = productValueString.replace('à vista', '').replace('R$', '').replace('.', '').replace(',', '.');
                             const productValueInstallments = String((parseFloat(productValueInstallmentsString.replace('10x de R$', '').replace('.', '')) * 10).toFixed(2));
 
-                            //Se o item verificado estiver disponível salva no vetor
-                            resultsInterno.arrayValues.push({
-                                Nome: productName,
-                                ValorAV: parseFloat(productValue).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'}),
-                                ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'}),
-                                Loja: 'Pichau',
-                                Link: productLink
-                            });
+                            //Se o item verificado estiver disponível e não consta nas expressões removidas, salva no vetor
+                            if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase()))) {
+                                resultsInterno.arrayValues.push({
+                                    Nome: productName,
+                                    ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                    ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                    Loja: 'Pichau',
+                                    Link: productLink
+                                });
+                            }
                         }
                     });
                     return resultsInterno;

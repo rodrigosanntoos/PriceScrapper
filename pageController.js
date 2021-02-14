@@ -2,6 +2,7 @@ const scraperKabumVGA = require('./Scrapers/ScraperKabumVGA');
 const scraperTerabyteVGA = require('./Scrapers/ScraperTerabyteVGA')
 const scraperPichauVGA = require('./Scrapers/ScraperPichauVGA');
 const scraperGKInfoStoreVGA = require('./Scrapers/ScraperGKInfoStoreVGA');
+const scraperAmazonVGA = require('./Scrapers/ScraperAmazonVGA');
 
 async function scrapeAll(browserInstance) {
     let browser;
@@ -29,6 +30,8 @@ async function scrapeAll(browserInstance) {
         results = results.concat(await scraperKabumVGA.scraper(browser));
         results = results.concat(await scraperPichauVGA.scraper(browser));
         results = results.concat(await scraperGKInfoStoreVGA.scraper(browser));
+        results = results.concat(await scraperAmazonVGA.scraper(browser));
+
 
         await browser.close();
 

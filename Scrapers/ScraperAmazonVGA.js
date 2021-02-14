@@ -1,5 +1,5 @@
 const scraperObject = {
-    url: 'https://www.kabum.com.br/hardware/placa-de-video-vga?pagina=1&ordem=3&limite=100&prime=false&marcas=[]&tipo_produto=[]&filtro=[]',
+    url: 'https://www.amazon.com.br/s?k=Placas+de+V%C3%ADdeo&i=computers&rh=n%3A16364811011&s=price-desc-rank&_encoding=UTF8&c=ts&qid=1613325541&rnid=16254006011&ts_id=16364811011&ref=sr_nr_p_36_5&low-price=1500&high-price=',
     async scraper(browser) {
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
@@ -9,42 +9,40 @@ const scraperObject = {
         let hasNextPage = false;
         // Wait for the required DOM to be rendered
         async function scrapeCurrentPage() {
-            await page.waitForSelector('.wjuxx');
+            await page.waitForSelector('.a-last');
 
 
             // Loop through the results and get the description + value
             let getPrices = (link) => new Promise(async (resolve, reject) => {
+
                 let results = await page.evaluate((resolve, reject) => {
                     const resultsInterno = {
                         arrayValues: [],
                         foundUnavailable: false
                     };
-                    document.querySelectorAll('div.jmuOAh').forEach((result) => {
-
-
-
-                        //isAvailable = Verifica se existem classes que indicam item indisponível
-                        const isAvailable = result.getElementsByClassName('jLtPVV').length === 0;
+                    document.querySelectorAll('.a-last.a-disabled').forEach((result) => {
+                        resultsInterno.foundUnavailable = true;
+                    });
+                    document.querySelectorAll('.s-result-item').forEach((result) => {
                         const expressoesRemovidas = ['Quadro', 'Osprey', 'Conferencia', 'Titan', 'Expansora', 'Screen Share', 'Radeon Pro', 'Microfone', 'Suporte', 'GT 710', 'GT 730', 'R5 2020', 'Cabo de extensão', 'G210', 'R7 240', 'GT 1030', ' 1GB', ' 2GB', ' 3GB', ' 4GB', '1050Ti', '1050', 'RX 550 ', 'Case para', 'Conferência'];
 
-                        //Se um item não está disponível, indica que é a última página de resultados
-                        if (!isAvailable) {
-                            resultsInterno.foundUnavailable = true;
-                        } else {
+                        //isAvailable = Verifica se existem classes que indicam o preço
+                        const isAvailable = result.getElementsByClassName('a-price-whole').length > 0;
 
+                        //Se está disponível, adiciona aos resultados
+                        if (isAvailable) {
                             //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
-                            const productName = result.getElementsByClassName('item-nome')[0].innerText;
-                            const productValue = result.getElementsByClassName('qatGF')[0].innerText.replace('R$ ', '').replace('.', '').replace(',', '.');
-                            const productValueInstallments = result.getElementsByClassName('ksiZrQ')[0].innerText.replace('R$', '').replace('.', '').replace(',', '.');
-                            const productLink = 'https://www.kabum.com.br' + result.getElementsByClassName('dIEkef')[0].getElementsByTagName('a')[0].getAttribute('href');
+                            const productName = result.getElementsByTagName('h2')[0].getElementsByTagName('a')[0].getElementsByTagName('span')[0].innerText;
+                            const productValue = result.getElementsByClassName('a-price-whole')[0].innerText.replace('.', '') + '.' + result.getElementsByClassName('a-price-fraction')[0].innerText;
+                            const productLink = 'https://www.amazon.com.br' + result.getElementsByTagName('h2')[0].getElementsByTagName('a')[0].getAttribute('href');
 
-                            //Se o item verificado estiver disponível e não consta nas expressões removidas, salva no vetor
-                            if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase()))) {
+                            //Se o item verificado não for um dos modelos ignorados, adiciona ao vetor
+                            if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase())) && result.getElementsByTagName('img')[1] === undefined) {
                                 resultsInterno.arrayValues.push({
                                     Nome: productName,
                                     ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                    ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                    Loja: 'Kabum',
+                                    ValorParc: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                    Loja: 'Amazon',
                                     Link: productLink
                                 });
                             }
@@ -62,7 +60,7 @@ const scraperObject = {
 
 
             if (hasNextPage) {
-                await page.click('.hEjrXm');
+                await page.click('.a-last');
                 return scrapeCurrentPage(); // Call this function recursively
             }
             await page.close();
