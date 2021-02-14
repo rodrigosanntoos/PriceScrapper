@@ -41,9 +41,6 @@ function buildHtmlTable(selector, myList) {
 
                 if (colIndex === 3 && myList[i][columns[colIndex]] === 'Amazon') {
                     row$.append($('<td/>').html('<a href="' + myList[i][columns[4]].replace('&tag=vgabrasil-20' , '').replace('www.', '') + '">' + 'Link </a>'));
-                        
-                        
-                        // myList[i][columns[4]].replace('&tag', '')));
                 }
 
             }
