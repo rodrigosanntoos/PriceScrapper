@@ -1,0 +1,980 @@
+[
+    {
+        "Nome": "Suporte para Placa de Vídeo VGA Deepcool - GH-01 LED",
+        "ValorAV": "R$ 56,90",
+        "ValorParc": "R$ 66,94",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Suporte para Placa de Vídeo DeepCool - GH-01 A-RGB",
+        "ValorAV": "R$ 85,90",
+        "ValorParc": "R$ 101,06",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo AFOX G210 Geforce, 1GB, DDR3 - AF210-1024D3L5-V2",
+        "ValorAV": "R$ 212,00",
+        "ValorParc": "R$ 212,00",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Cabo de Extensão VGA Adata XPG Prime ARGB - ARGBEXCABLE-VGA-BKCWW",
+        "ValorAV": "R$ 219,90",
+        "ValorParc": "R$ 258,71",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO AFOX RADEON R5 220, 2GB, DDR3, 64BIT, AFR5220-2048D3L5-V2",
+        "ValorAV": "R$ 229,00",
+        "ValorParc": "R$ 252.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VIDEO AFOX RADEON R5 220 2GB 64-BIT, AFR5220-2048D3L9-V2",
+        "ValorAV": " R$229,01",
+        "ValorParc": "R$ 260.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "PLACA DE VIDEO AFOX RADEON R5 220 2GB DDR3 64-BIT, AFR5220-2048D3L5-V2",
+        "ValorAV": " R$235,90",
+        "ValorParc": "R$ 260.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO COLORFUL, GEFORCE, GT 710, 2GB DDR3, 64BIT, GT710-2GD3-V",
+        "ValorAV": "R$ 239,00",
+        "ValorParc": "R$ 264.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes NVIDIA GeForce G210 1GB, DDR3 - PA210G6401D3LP",
+        "ValorAV": "R$ 239,90",
+        "ValorParc": "R$ 282,24",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Galax NVIDIA GeForce GT 710 1GB, DDR3 - 71GGF4DC00WG",
+        "ValorAV": "R$ 259,90",
+        "ValorParc": "R$ 305,76",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Zotac NVIDIA GeForce GT 710 1GB, DDR3 - ZT-71304-20L",
+        "ValorAV": "R$ 269,90",
+        "ValorParc": "R$ 317,53",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes NVIDIA GeForce GT 710 2GB, DDR3 - PA710GT6402D3LP",
+        "ValorAV": "R$ 275,90",
+        "ValorParc": "R$ 324,59",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Galax NVIDIA GeForce GT 710 Passive, 2GB, DDR3 - 71GPF4HI00GX",
+        "ValorAV": "R$ 279,90",
+        "ValorParc": "R$ 329,29",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GT 710 1GD3H LP 1GB, DDR3",
+        "ValorAV": "R$ 285,90",
+        "ValorParc": "R$ 336,35",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo AFOX Geforce GT 710 1GB PCI-E DDR3, DVI, VGA, HDMI Low Profile - AF710-1024D3L8-V2",
+        "ValorAV": "R$ 329,42",
+        "ValorParc": "R$ 329,42",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GT 710 2GD3 LP 2GB, DDR3",
+        "ValorAV": "R$ 341,90",
+        "ValorParc": "R$ 402,24",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Zotac NVIDIA GeForce GT 710 2GB, DDR3 - ZT-71302-20L",
+        "ValorAV": "R$ 349,90",
+        "ValorParc": "R$ 411,65",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo EVGA NVIDIA GeForce GT 710 2GB, DDR3 - 02G-P3-2713-KR",
+        "ValorAV": "R$ 349,90",
+        "ValorParc": "R$ 411,65",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo AFOX Geforce GT 710 2GB PCI-E DDR3, DVI, VGA, HDMI Low Profile - AF710-2048D3L7",
+        "ValorAV": "R$ 371,53",
+        "ValorParc": "R$ 371,53",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Gigabyte NVIDIA GeForce GT 730, 2GB, GDDR5, REV 2.0 - GV-N730D5-2GI",
+        "ValorAV": "R$ 389,90",
+        "ValorParc": "R$ 458,71",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GT 730 2GB, DDR3 - N730-2GD3V3",
+        "ValorAV": "R$ 409,90",
+        "ValorParc": "R$ 482,24",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes GT 730, 2GB, DDR3 - PA7302DR364LP",
+        "ValorAV": "R$ 419,90",
+        "ValorParc": "R$ 494,00",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes AMD Radeon R7 240, 2GB, GDDR5 - PJ240R712802D5",
+        "ValorAV": "R$ 419,90",
+        "ValorParc": "R$ 494,00",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO MSI, GEFORCE, GT 730 2GB, N730-2GD3V3, GDDR3, 128 BIT, 912-V809-2261",
+        "ValorAV": "R$ 468,84",
+        "ValorParc": "R$ 528.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VIDEO BIOSTAR, RADEON, RX 550, 2GB, GDDR5, 128 BIT, VA5515RF21-TBMRA-BS2",
+        "ValorAV": "R$ 479,00",
+        "ValorParc": "R$ 540.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VIDEO AFOX RADEON RX 550 2GB GDDR5 128-BIT, AFRX550-2048D5H4",
+        "ValorAV": " R$479,02",
+        "ValorParc": "R$ 540.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO AFOX RADEON RX 550, 2GB, GDDR5, 128BIT, AFRX550-2048D5H7",
+        "ValorAV": "R$ 485,90",
+        "ValorParc": "R$ 552.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO GALAX, GEFORCE GT 730, 4GB, DDR3, 64BIT, 73GQS4HX00WG",
+        "ValorAV": "R$ 499,38",
+        "ValorParc": "R$ 564.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO LEADTEK WINFAST GT 1030, 2GB, GDDR5, 64BIT",
+        "ValorAV": "R$ 499,00",
+        "ValorParc": "R$ 564.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo PNY NVIDIA GeForce GT 1030, 2GB, GDDR5 - VCGGT10302PB",
+        "ValorAV": "R$ 499,90",
+        "ValorParc": "R$ 588,12",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Gainward NVIDIA GeForce GT 1030 2GB, GDDR5 - NE5103000646-1080F",
+        "ValorAV": "R$ 499,90",
+        "ValorParc": "R$ 588,12",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Zotac NVIDIA GeForce GT 1030 2GB, GDDR5 - ZT-P10300A-10L",
+        "ValorAV": "R$ 499,90",
+        "ValorParc": "R$ 588,12",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO AFOX, RADEON, RX 550, 2GB, GDDR5, 128BIT, AFRX550-2048D5H4",
+        "ValorAV": "R$ 509,00",
+        "ValorParc": "R$ 576.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo Afox GeForce GT730 2GB, DDR3, 128 Bits, Low Profile, HDMI/DVI/VGA - AF730-2048D3L4-V1",
+        "ValorAV": "R$ 510,42",
+        "ValorParc": "R$ 510,42",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo ASRock AMD Radeon RX 550 Phantom Gaming 2G, GDDR5 - 90-GA0500-00UANF",
+        "ValorAV": "R$ 514,90",
+        "ValorParc": "R$ 605,76",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo AFOX GeForce GT 730, 2GB, DDR3, 128 Bits, Low Profile, HDMI/DVI/VGA - AF730-2048D3L6",
+        "ValorAV": "R$ 520,57",
+        "ValorParc": "R$ 520,57",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO AFOX GEFORCE GT 740, 4GB, GDDR3, 128BIT, AF740-4096D3L3",
+        "ValorAV": "R$ 529,00",
+        "ValorParc": "R$ 600.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GT 1030 2GD4 LP OC 2GB, DDR4 - 912-V809-2826",
+        "ValorAV": "R$ 529,90",
+        "ValorParc": "R$ 623,41",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes GT 730, 4GB, GDDR5 - PA7304DR564LP",
+        "ValorAV": "R$ 529,90",
+        "ValorParc": "R$ 623,41",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes AMD Radeon R7 240, 4GB, GDDR5 - PJ240R71284GD5",
+        "ValorAV": "R$ 545,90",
+        "ValorParc": "R$ 642,24",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Gigabyte NVIDIA GeForce GT 1030 2G, GDDR5 - GV-N1030D5-2GL",
+        "ValorAV": "R$ 545,90",
+        "ValorParc": "R$ 642,24",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO BIOSTAR, GEFORCE, GT 730, 2GB, GDDR5, 128BIT, VN7315THX1-TB1RA-BS2",
+        "ValorAV": "R$ 549,00",
+        "ValorParc": "R$ 624.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO AFOX GEFORCE GT 1030, 2GB, GDDR5, 64BIT, AF1030-2048D5L5",
+        "ValorAV": "R$ 549,00",
+        "ValorParc": "R$ 624.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo VGA Galax NVIDIA GeForce GT 1030 2GB GDDR5 64Bits - 30NPH4HVQ4ST",
+        "ValorAV": "R$ 549,90",
+        "ValorParc": "R$ 646,94",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes GT 1030, 2GB, GDDR5 - PP10302048DR564",
+        "ValorAV": "R$ 549,90",
+        "ValorParc": "R$ 646,94",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo AFOX Geforce GT420, 2GB, DDR3 - AF420-2048D3L5",
+        "ValorAV": "R$ 555,91",
+        "ValorParc": "R$ 555,91",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PowerColor AMD Radeon RX 550, 2GB, DDR5 - AXRX 550 2GB64BD5-DH",
+        "ValorAV": "R$ 566,90",
+        "ValorParc": "R$ 666,94",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO AFOX GEFORCE GT 1030 2GB GDDR5 64-BIT, AF1030-2048D5L4",
+        "ValorAV": " R$569,01",
+        "ValorParc": "R$ 640.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "Placa de Vídeo VGA Galax NVIDIA GeForce GT 1030 2GB DDR5 64Bits Exoc 30NPH4HVQ5EW",
+        "ValorAV": "R$ 599,90",
+        "ValorParc": "R$ 705,76",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo VGA NVIDIA GIGABYTE GEFORCE GT 1030 2GB OC GDDR5 GV-N1030OC-2GI",
+        "ValorAV": "R$ 599,90",
+        "ValorParc": "R$ 705,76",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo EVGA NVIDIA GeForce GT 1030 SC 2GB, GDDR5 - 02G-P4-6332-KR",
+        "ValorAV": "R$ 599,90",
+        "ValorParc": "R$ 705,76",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GT 1030 2G LP OC, 2GB, GDDR5 - Geforce GT 1030 2G LP OC",
+        "ValorAV": "R$ 599,90",
+        "ValorParc": "R$ 705,76",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes GT 740, 4GB, GDDR5 - PA740GT12804D5FZ",
+        "ValorAV": "R$ 599,90",
+        "ValorParc": "R$ 705,76",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO AFOX, RADEON, RX 550, 4GB, GDDR5, 128BIT, AFRX550-4096D5H4-V4",
+        "ValorAV": "R$ 608,99",
+        "ValorParc": "R$ 696.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO POWERCOLOR, RADEON, RX 550 RED DRAGON, 4GB, DDR5, 128BIT, AXRX 550 4GBD5-DH",
+        "ValorAV": "R$ 629,00",
+        "ValorParc": "R$ 720.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo EVGA NVIDIA GeForce GT 1030 SC 2GB, GDDR5 - 02G-P4-6338-KR",
+        "ValorAV": "R$ 629,90",
+        "ValorParc": "R$ 741,06",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO MSI, GEFORCE, GT 1030 2GD4 LP OC, 2GB, DDR4, 64 BIT, 912-V809-2826",
+        "ValorAV": "R$ 642,93",
+        "ValorParc": "R$ 732.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO PCYES RX 550 GRAFFITI SERIES, 4GB GDDR5, 128BIT, PJRX550R5SF",
+        "ValorAV": "R$ 649,00",
+        "ValorParc": "R$ 744.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes GTX750 Ti, 2GB, DDR5 - PA75012802G5",
+        "ValorAV": "R$ 649,90",
+        "ValorParc": "R$ 764,59",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo EVGA NVIDIA GeForce GT 1030 SC 2GB, GDDR5 - 02G-P4-6333-KR",
+        "ValorAV": "R$ 649,90",
+        "ValorParc": "R$ 764,59",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GT 730 4GB, DDR3 - N730-4GD3V2",
+        "ValorAV": "R$ 669,90",
+        "ValorParc": "R$ 788,12",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYES AMD Radeon RX 550, 4GB GDDR5, 128 Bits, Graffiti Series - PJRX550R5SF",
+        "ValorAV": "R$ 669,90",
+        "ValorParc": "R$ 788,12",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO AFOX RADEON RX 550 4GB GDDR5 128-BIT, AFRX550-4096D5H4-V4",
+        "ValorAV": " R$669,02",
+        "ValorParc": "R$ 760.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO POWERCOLOR, RADEON, RX 550 RED DRAGON, 4GB, GDDR5, 128BIT, AXRX 550 4GBD5-DHV5",
+        "ValorAV": "R$ 699,00",
+        "ValorParc": "R$ 792.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo PowerColor AMD Radeon RX 550, 4GB, DDR5 - AXRX 550 4GBD5-DH",
+        "ValorAV": "R$ 711,90",
+        "ValorParc": "R$ 837,53",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo AFOX Geforce GT 740, 4GB, PCI-E DDR3, DVI, VGA, HDMI, Dual Slot - AF740-4096D3L3",
+        "ValorAV": "R$ 721,42",
+        "ValorParc": "R$ 721,42",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO BIOSTAR, RADEON, RX 560, 4GB, GDDR5, 128 BIT, VA5615RF41-TBVRA-BS2",
+        "ValorAV": "R$ 799,00",
+        "ValorParc": "R$ 912.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo AMD Radeon Pro WX 2100, 2GB, GDDR5 - 100-506001",
+        "ValorAV": "R$ 799,90",
+        "ValorParc": "R$ 941,06",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Sapphire AMD Radeon RX 550 Pulse 4G, GDDR5 - 11268-01-20G",
+        "ValorAV": "R$ 839,90",
+        "ValorParc": "R$ 988,12",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes NVIDIA GeForce GTX 1050 Ti 4GB GDDR5 - PA1050TI12804G5DF",
+        "ValorAV": "R$ 959,90",
+        "ValorParc": "R$ 1.129,29",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Gainward NVIDIA GeForce GTX 1050 Ti, 4GB, GDDR5 - NE5105T018G1-1070F",
+        "ValorAV": "R$ 979,90",
+        "ValorParc": "R$ 1.152,82",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Gigabyte NVIDIA GeForce GTX 1050 Ti OC 4GB, GDDR5 - GV-N105TOC-4GL",
+        "ValorAV": "R$ 988,90",
+        "ValorParc": "R$ 1.163,41",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PNY NVIDIA Quadro P400, 2GB, GDDR5 - VCQP400V2PB",
+        "ValorAV": "R$ 999,90",
+        "ValorParc": "R$ 1.176,35",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO PNY QUADRO P400 V2 2GB GDDR5 64-BIT, VCQP400V2-PORPB",
+        "ValorAV": " R$999,03",
+        "ValorParc": "R$ 1130.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "PLACA DE VIDEO AFOX GEFORCE GTX 1050TI 4GB GDDR5 128-BIT, AF1050TI-4096D5H2",
+        "ValorAV": " R$1.079,01",
+        "ValorParc": "R$ 1220.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "Placa de Vídeo Gigabyte NVIDIA GeForce GTX 1050 Ti D5 4G, GDDR5 - GV-N105TD5-4GD",
+        "ValorAV": "R$ 1.084,90",
+        "ValorParc": "R$ 1.276,35",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GTX 1050 Ti 4GT OC 4GB, GDDR5",
+        "ValorAV": "R$ 1.084,90",
+        "ValorParc": "R$ 1.276,35",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Video PcYes GeForce GTX 1050 TI Dual Fan 4GB GDDR5 128 Bits - PA1050TI12804G5DF",
+        "ValorAV": "R$ 1.118,99",
+        "ValorParc": "R$ 1.286,20",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "Placa de Vídeo Gigabyte NVIDIA GeForce GTX 1050 Ti OC 4G, GDDR5 - GV-N105TOC-4GD",
+        "ValorAV": "R$ 1.124,90",
+        "ValorParc": "R$ 1.323,41",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus NVIDIA GeForce GTX 1050 Ti OC Cerberus 4GB, GDDR5 - CERBERUS-GTX1050TI-O4G",
+        "ValorAV": "R$ 1.154,90",
+        "ValorParc": "R$ 1.358,71",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus NVIDIA GeForce GTX 1050 Ti Phoenix 4GB, GDDR5 - PH-GTX1050TI-4G",
+        "ValorAV": "R$ 1.184,90",
+        "ValorParc": "R$ 1.394,00",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO AFOX, GEFORCE, GTX 1050 TI, 4GB GDDR5, 128BIT, AF1050TI-4096D5H5",
+        "ValorAV": "R$ 1.191,03",
+        "ValorParc": "R$ 1368.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo Gigabyte NVIDIA GeForce GTX 1650 D6 OC 4G, 4GB GDDR6, Rev 2.0 - 9VN1656O4-00-20",
+        "ValorAV": "R$ 1.312,90",
+        "ValorParc": "R$ 1.544,59",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Gigabyte NVIDIA GeForce GTX 1650 D6 OC Low Profile 4G, 4GB, GDDR6 - GV-N1656OC-4GL",
+        "ValorAV": "R$ 1.319,90",
+        "ValorParc": "R$ 1.552,82",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GTX 1650 D6 VENTUS XS OCV1, 4GB, GDDR6",
+        "ValorAV": "R$ 1.339,90",
+        "ValorParc": "R$ 1.576,35",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PowerColor AMD Radeon RX 570, 4GB, GDDR5 - AXRX 570 4GBD5-DHDV3/OC",
+        "ValorAV": "R$ 1.339,90",
+        "ValorParc": "R$ 1.576,35",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Video PCYes GeForce GTX 1650 Dual Fan 4GB GDDR5 128-Bits - PA1650412820DR6",
+        "ValorAV": "R$ 1.376,99",
+        "ValorParc": "R$ 1.582,75",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO ASUS PHOENIX GEFORCE GTX 1650 OC, 4GB GDDR6, 128BIT, PH-GTX1650-O4GD6-P",
+        "ValorAV": "R$ 1.391,13",
+        "ValorParc": "R$ 1596.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo EVGA NVIDIA GeForce GTX 1650 KO ULTRA, 4GB, GDDR6 - 04G-P4-1457-KR",
+        "ValorAV": "R$ 1.439,90",
+        "ValorParc": "R$ 1.694,00",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus NVIDIA GeForce GTX 1650, 4GB, GDDR6 - TUF-GTX1650-O4GD6-P-GAMING",
+        "ValorAV": "R$ 1.449,90",
+        "ValorParc": "R$ 1.705,76",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Video Asrock Phantom Gaming D Radeon RX570 4G, GDDR5",
+        "ValorAV": "R$ 1.499,90",
+        "ValorParc": "R$ 1.764,59",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO PNY QUADRO P620 V2 2GB GDDR5 128-BIT, VCQP620V2-PORPB",
+        "ValorAV": " R$1.499,04",
+        "ValorParc": "R$ 1700.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GTX 1650 D6 Gaming X, 4GB, GDDR6 - GeForce GTX 1650 D6 GAMING X",
+        "ValorAV": "R$ 1.504,90",
+        "ValorParc": "R$ 1.770,47",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo EVGA NVIDIA GeForce GTX 1650 SC Ultra GDDR6 Gaming, 4GB, GDDR6 - 4G-P4-1257-KR",
+        "ValorAV": "R$ 1.504,90",
+        "ValorParc": "R$ 1.770,47",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO PCYES GEFORCE GTX 1650 GRAFFITI SERIES, 4GB GDDR6, 128BIT, PA1650412820DR6",
+        "ValorAV": "R$ 1.652,13",
+        "ValorParc": "R$ 1896.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO GALAX, GEFORCE, GTX 1650 EX PLUS, 4GB, 1-CLICK OC, GDDR6, 128-BIT, 65SQL8DS93E1",
+        "ValorAV": "R$ 1.695,63",
+        "ValorParc": "R$ 1944.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO ASUS, TUF GAMING GEFORCE, GTX 1650 OC DUAL, 4GB, GDDR6, 128BIT, TUF-GTX1650-O4GD6-P-GAMIN",
+        "ValorAV": "R$ 1.695,63",
+        "ValorParc": "R$ 1944.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo ASRock AMD Radeon RX 5500 XT Challenger D 4G OC, 4GB, GDDR6 - RX5500XT CLD 4GO",
+        "ValorAV": "R$ 1.899,90",
+        "ValorParc": "R$ 2.235,18",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Case para Placa de Vídeo Asus XG Station Pro - 90YV0B90-M0SA00",
+        "ValorAV": "R$ 1.999,90",
+        "ValorParc": "R$ 2.352,82",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus Dual AMD Radeon RX 5500 XT EVO, 8GB, GDDR6 - DUAL-RX5500XT-O8G-EVO",
+        "ValorAV": "R$ 2.059,90",
+        "ValorParc": "R$ 2.423,41",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus ROG Strix AMD RX 5500 XT OC Gaming, 8G, GDDR6 - ROG-STRIX-RX5500XT-O8G-GAMING",
+        "ValorAV": "R$ 2.204,90",
+        "ValorParc": "R$ 2.594,00",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCYes GeForce GTX 1660 Super Graffiti Series 6GB GDDR6 192-Bit - PPSOC16601926G6",
+        "ValorAV": "R$ 2.228,99",
+        "ValorParc": "R$ 2.562,06",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GTX 1660 Super Ventus XS OC, 6GB, GDDR6",
+        "ValorAV": "R$ 2.588,12",
+        "ValorParc": "R$ 3.044,85",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus TUF3 NVIDIA GeForce GTX 1660 SUPER, 14.0 Gbps, 6GB, GDDR6, Turing Shaders - TUF 3-GTX1660S-O6G-GAMING",
+        "ValorAV": "R$ 2.679,90",
+        "ValorParc": "R$ 3.152,82",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo NVIDIA QUADRO P1000 4GB GDDR5 128 Bits 4 Mini Display Port VCQP1000-PORPB - Suporta Até 4 Monitores/tv",
+        "ValorAV": "R$ 2.710,87",
+        "ValorParc": "R$ 3.115,94",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "Placa de Vídeo MSI NVIDIA GeForce GTX 1660 Ti Gaming X 6G, GDDR6",
+        "ValorAV": "R$ 2.729,90",
+        "ValorParc": "R$ 3.211,65",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO PNY QUADRO P1000 V2 4GB GDDR5 128-BIT, VCQP1000V2-PORPB",
+        "ValorAV": " R$2.799,09",
+        "ValorParc": "R$ 3180.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "PLACA DE VIDEO PNY QUADRO P2200 5GB GDDR5X 160-BIT, VCQP2200",
+        "ValorAV": " R$3.699,12",
+        "ValorParc": "R$ 4200.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "Placa de Vídeo Gigabyte NVIDIA GeForce RTX 2080 Super Gaming OC Waterforce WB, 8GB, GDDR6 - GV-N208SGAMINGOC WB-8GD",
+        "ValorAV": "R$ 4.999,90",
+        "ValorParc": "R$ 5.882,24",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Zotac NVIDIA GeForce RTX 3070 Twin Edge, 8GB, GDDR6 - ZT-A30700E-10P",
+        "ValorAV": "R$ 5.775,90",
+        "ValorParc": "R$ 6.795,18",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Zotac NVIDIA GeForce RTX 3070 Twin Edge OC, 8GB, GDDR6 - ZT-A30700H-10P",
+        "ValorAV": "R$ 5.775,90",
+        "ValorParc": "R$ 6.795,18",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO PNY QUADRO P4000 8GB GDDR5 256-BIT, VCQP4000-PB",
+        "ValorAV": " R$5.898,93",
+        "ValorParc": "R$ 6700.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "Placa de Vídeo Galax NVIDIA Geforce RTX 3070, 14 Gbps, 8GB, GDDR6, DLSS, Ray Tracing - 37NSL6MD2KOC",
+        "ValorAV": "R$ 6.064,90",
+        "ValorParc": "R$ 7.135,18",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo GALAX NVIDIA GeForce RTX 3070 SG (1-Click OC), 8GB, GDDR6 - 37NSL6MD1GNA",
+        "ValorAV": "R$ 6.121,90",
+        "ValorParc": "R$ 7.202,24",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO COLORFUL, GEFORCE, IGAME RTX 3070 ULTRA OC-V, 8GB, GDDR6, 256BIT",
+        "ValorAV": "R$ 6.176,13",
+        "ValorParc": "R$ 7092.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO PCYES, GEFORCE RTX 3070 GRAFITTI, 8GB, GDDR6, 256BIT, PP3070GP8DR6256",
+        "ValorAV": "R$ 6.176,13",
+        "ValorParc": "R$ 7092.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo VGA GAINWARD Nvidia RTX3070 PHANTOM, 8GB, GDDR6, DLSS, Ray Tracing - NE63070019P2-1040P",
+        "ValorAV": "R$ 6.258,90",
+        "ValorParc": "R$ 7.363,41",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PCyes NVIDIA GeForce RTX 3070, 8GB, GDDR6, 256 Bits, Triple-Fan, Graffiti Gaming Pro Series - PP3070GP8DR6256",
+        "ValorAV": "R$ 6.300,90",
+        "ValorParc": "R$ 7.412,82",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus NVIDIA Rog Strix Gaming GeForce RTX3070, OC 8GB, GDDR6 - ROG-STRIX-RTX3070-O8G-GAMING",
+        "ValorAV": "R$ 6.300,90",
+        "ValorParc": "R$ 7.412,82",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo NVIDIA QUADRO P4000 8GB GDDR5 256 bits 4 display port VCQP4000-PORPB",
+        "ValorAV": "R$ 6.800,68",
+        "ValorParc": "R$ 7.816,87",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO ASROCK RADEON RX 6800 XT PHANTOM GAMING D 16G OC, 16GB, GDDR6, 256BIT, 90-GA28ZZ-00UANF",
+        "ValorAV": "R$ 6.999,00",
+        "ValorParc": "R$ 8040.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo Sapphire NITRO+ AMD Radeon RX 6800 XT SE, 16 Gbps, 16GB, DDR6, Fan ARGB - 11304-01-20G",
+        "ValorAV": "R$ 7.209,90",
+        "ValorParc": "R$ 8.482,24",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Power Color AMD RX6800 AXRX 6800, 16 Gbps, 16GB, GDDR6 - 16BD6-3DH/OC",
+        "ValorAV": "R$ 7.299,90",
+        "ValorParc": "R$ 8.588,12",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo NVIDIA QUADRO RTX 4000 8Gb GDDR6 256 bits - VCQRTX4000-PB",
+        "ValorAV": "R$ 7.389,07",
+        "ValorParc": "R$ 8.493,18",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "Placa de Vídeo VGA ASUS ROG Strix Radeon RX 6800, 16 Gbps, 16GB GDDR6 - ROG-STRIX-RX6800-O16G-GAMING",
+        "ValorAV": "R$ 7.499,90",
+        "ValorParc": "R$ 8.823,41",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo ASUS TUF GAMING AMD Radeon RX 6800, 16GB, GDDR6 - TUF-RX6800-O16G-GAMING",
+        "ValorAV": "R$ 7.699,90",
+        "ValorParc": "R$ 9.058,71",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus Rog Strix NVIDIA RTX 3070, 8GB, GDDR6 - ROG-STRIX-RTX3070-O8G-WHITE",
+        "ValorAV": "R$ 7.770,90",
+        "ValorParc": "R$ 9.142,24",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO PNY QUADRO RTX 4000 8GB GDDR6, VCQRTX4000-PORPB",
+        "ValorAV": " R$7.799,25",
+        "ValorParc": "R$ 8860.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus TUF RX 6800 XT GAMING OC, 16G, GDDR6 - TUF-RX6800XT-O16G-GAMING",
+        "ValorAV": "R$ 7.999,90",
+        "ValorParc": "R$ 9.411,65",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Powercolor Radeon RX 6800 XT Red Devil Limited Edition 16GB 256bit GDDR6 - AXRX 6800XT 16GBD6-2DHCE/OC",
+        "ValorAV": "R$ 8.299,00",
+        "ValorParc": "R$ 9.539,08",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO POWERCOLOR RADEON RX 6800 XT RED DEVIL, 16GB, GDDR6, 256BIT, AXRX 6800XT 16GBD6-3DHE/OC",
+        "ValorAV": "R$ 8.351,13",
+        "ValorParc": "R$ 9588.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo Power Color AMD RX6800 AXRX 6800, 16.0 Gbps, 16GB, GDDR6 - 16GBD6-2DHCE/OC",
+        "ValorAV": "R$ 8.399,90",
+        "ValorParc": "R$ 9.882,24",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo EVGA NVIDIA GeForce RTX 2080 Ti FTW3 Ultra Overclocked 65C Gaming, 11GB, 14.0 Gbps, GDDR6, Ray Tracing, RGB, Ansel - 11G-P4-2487-KR",
+        "ValorAV": "R$ 8.829,90",
+        "ValorParc": "R$ 10.388,12",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO ASROCK RADEON RX 6900 XT 16GB PHANTOM GAMING OC EDITION GDDR6 2...",
+        "ValorAV": " R$8.999,88",
+        "ValorParc": "R$ 10220.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "Placa de Vídeo ASRock AMD Radeon RX 6900 XT Graphics, 16 Gbps, 16GB, GDDR6, PCI Express 4.0, Hardware Raytracing - RX6900XT PGD 16GO",
+        "ValorAV": "R$ 9.088,90",
+        "ValorParc": "R$ 10.692,82",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus AMD Radeon RX 6900 XT, 16G, GDDR6 - RX6900XT-16G",
+        "ValorAV": "R$ 9.499,90",
+        "ValorParc": "R$ 11.176,35",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Power Color AMD RX6800XT 16GB, 16 Gbps, 16GB, GDDR6 - D62DHCEOC",
+        "ValorAV": "R$ 9.699,90",
+        "ValorParc": "R$ 11.411,65",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO POWERCOLOR RADEON RX 6900 XT RED DEVIL, 16GB, GDDR6, 256BIT, AXRX 6900XT 16GBD6-3DHE/OC",
+        "ValorAV": "R$ 9.978,03",
+        "ValorParc": "R$ 11460.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO ASUS TUF GAMING RADEON RX 6900 XT, 16GB, GDDR6, 256BIT, TUF-RX6900XT-O16G-GAMING",
+        "ValorAV": "R$ 9.999,78",
+        "ValorParc": "R$ 11484.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO POWERCOLOR RADEON RX 6900 XT, 16GB, GDDR6, 256BIT, AXRX 6900XT 16GBD6-M2DHC",
+        "ValorAV": "R$ 9.999,78",
+        "ValorParc": "R$ 11484.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO ASUS RADEON RX 6900 XT, 16GB, GDDR6, 256BIT, 90YV0GG0-U0NA00",
+        "ValorAV": "R$ 9.999,78",
+        "ValorParc": "R$ 11484.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO ASROCK RADEON RX 6900 XT, 16GB, GDDR6, 256BIT, 90-GA2HZZ-00UANF",
+        "ValorAV": "R$ 9.999,78",
+        "ValorParc": "R$ 11484.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo Sapphire NITRO+ AMD Radeon RX 6900 XT, 16 Gbps, 16GB, DDR6 - 11308-01-20G",
+        "ValorAV": "R$ 10.299,90",
+        "ValorParc": "R$ 12.117,53",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VÍDEO SAPPHIRE RADEON RX 6900 XT, 16GB, GDDR6, 256BIT, 21308-01-20G",
+        "ValorAV": "R$ 10.999,00",
+        "ValorParc": "R$ 12636.00",
+        "Loja": "Terabyte"
+    },
+    {
+        "Nome": "Placa de Vídeo ASUS TUF GAMING Radeon RX 6900 XT, 16 Gbps, 16GB GDDR6 - TUF-RX6900XT-O16G-GAMING",
+        "ValorAV": "R$ 10.999,90",
+        "ValorParc": "R$ 12.941,06",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus ROG Strix GeForce RTX 3080 10GB GDDR6X 320-bit - ROG-STRIX-RTX3080-10G-GAMING",
+        "ValorAV": "R$ 11.998,00",
+        "ValorParc": "R$ 13.790,81",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "Placa de Vídeo AMD Radeon Pro VII, 16GB - 100-506163",
+        "ValorAV": "R$ 11.999,90",
+        "ValorParc": "R$ 14.117,53",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Video PNY GeForce RTX 3090 XLR8 Gaming EPIC-X RGB Triple Fan 24GB GDDR6X 384 bit - VCG309024TFXPPB",
+        "ValorAV": "R$ 12.498,99",
+        "ValorParc": "R$ 14.366,66",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "Placa de Video PNY GeForce RTX 3090 XLR8 Gaming EPIC-X RGB Triple Fan 24GB GDDR6X 384 bit - VCG309024TFXMPB",
+        "ValorAV": "R$ 12.498,99",
+        "ValorParc": "R$ 14.366,66",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "Placa de Video Galax GeForce RTX 3090 SG 24GB GDDR6X 384 bit - 39NSM5MD1GNA",
+        "ValorAV": "R$ 12.794,01",
+        "ValorParc": "R$ 14.705,76",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "Placa de Vídeo ASUS ROG Strix LC Radeon RX 6900 XT, 16 Gbps, 16GB, GDDR6 -  ROG-STRIX-LC-RX6900XT-O16G-GAMING",
+        "ValorAV": "R$ 13.899,90",
+        "ValorParc": "R$ 16.352,82",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO MSI GEFORCE RTX 3090 VENTUS 3X 24GB OC GDDR6X 384-BIT, 912-V388...",
+        "ValorAV": " R$13.999,82",
+        "ValorParc": "R$ 15900.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus NVIDIA TUF RTX 3090, 24GB, GDDR6X - TUF-RTX3090-O24G-GAMING",
+        "ValorAV": "R$ 14.070,90",
+        "ValorParc": "R$ 16.554,00",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Gigabyte NVIDIA GeForce RTX 3090 Vision OC, 24GB GDDR6X - GV-N3090VISION OC-24GD",
+        "ValorAV": "R$ 14.700,90",
+        "ValorParc": "R$ 17.295,18",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo PNY GEFORCE RTX 3090 XLR8, 24GB, GDDR6X - VCG309024TFXMPB",
+        "ValorAV": "R$ 14.700,90",
+        "ValorParc": "R$ 17.295,18",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo EVGA NVIDIA GeForce RTX 3090, 24GB, GDDR6X - 24G-P5-3987-KR",
+        "ValorAV": "R$ 14.990,90",
+        "ValorParc": "R$ 17.636,35",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo VGA GAINWARD Nvidia RTX3090 PHANTOM, 24GB, GDDR6X, DLSS, Ray Tracing - NED3090T19SB-1021P",
+        "ValorAV": "R$ 15.540,90",
+        "ValorParc": "R$ 18.283,41",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "PLACA DE VIDEO ASUS GEFORCE RTX 3090 24GB GDDR6X ROG STRIX WHITE EDITION OC 38...",
+        "ValorAV": " R$15.798,81",
+        "ValorParc": "R$ 17950.00",
+        "Loja": "Pichau"
+    },
+    {
+        "Nome": "Placa de Vídeo Gainward NVIDIA GeForce NV RTX3090, 24GB, GDDR6X - NED3090019SB-132BX",
+        "ValorAV": "R$ 16.275,90",
+        "ValorParc": "R$ 19.148,12",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo ASUS NVIDIA GeForce RTX 3090, 24GB GDDR6X, 19.5 Gbps, Ray Tracing, Suporte até 4 Telas - ROG-STRIX-RTX3090-24G-GAMING",
+        "ValorAV": "R$ 16.800,90",
+        "ValorParc": "R$ 19.765,76",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus NVIDIA Geforce RTX3090, 24GB, GDDR6 - RTX3090-24G-EK",
+        "ValorAV": "R$ 16.800,90",
+        "ValorParc": "R$ 19.765,76",
+        "Loja": "Kabum"
+    },
+    {
+        "Nome": "Placa de Vídeo NVIDIA QUADRO RTX 5000 16Gb GDDR6 256 bits - VCQRTX5000-PB",
+        "ValorAV": "R$ 16.999,00",
+        "ValorParc": "R$ 19.539,08",
+        "Loja": "GKInfoStore"
+    },
+    {
+        "Nome": "Placa de Vídeo Asus Rog Strix NVIDIA GeForce RTX 3090, 24GB, GDDR6 - ROG-STRIX-RTX3090-O24G-WHITE",
+        "ValorAV": "R$ 17.010,90",
+        "ValorParc": "R$ 20.012,82",
+        "Loja": "Kabum"
+    }
+]

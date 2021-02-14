@@ -39,10 +39,10 @@ const scraperObject = {
                             const productValueInstallments = 'R$ ' + String((parseFloat(productValueInstallmentsString.replace('R$', '').replace('.', '')) * 12).toFixed(2));
                             //Se o item verificado estiver disponível salva no vetor
                             resultsInterno.arrayValues.push({
-                                nome: productName,
-                                valorParc: productValueInstallments,
-                                valorAV: productValue,
-                                loja: 'Terabyte'
+                                Nome: productName,
+                                ValorAV: productValue,
+                                ValorParc: productValueInstallments,
+                                Loja: 'Terabyte'
                             });
                         }
                     });

@@ -38,10 +38,10 @@ const scraperObject = {
 
                             //Se o item verificado estiver disponível salva no vetor
                             resultsInterno.arrayValues.push({
-                                nome: productName,
-                                valorParc: productValueInstallments,
-                                valorAV: productValue,
-                                loja: 'Kabum'
+                                Nome: productName,
+                                ValorAV: productValue,
+                                ValorParc: productValueInstallments,
+                                Loja: 'Kabum'
                             });
                         }
                     });
