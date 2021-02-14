@@ -1,6 +1,6 @@
-const scraperKabum = require('./ScraperKabum');
-const scraperTerabyte = require('./ScraperTerabyte')
-const scraperPichau = require('./ScraperPichau');
+const scraperKabum = require('./Scrapers/ScraperKabumVGA');
+const scraperTerabyte = require('./Scrapers/ScraperTerabyteVGA')
+const scraperPichau = require('./Scrapers/ScraperPichauVGA');
 async function scrapeAll(browserInstance) {
     let browser;
     let results
