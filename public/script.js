@@ -28,7 +28,6 @@ function buildHtmlTable(selector, myList) {
                 //Se for a primeira coluna, será o nome onde é necessário adicionar o link
                 if (colIndex === 0) {
                     cellValue = '<a href="' + myList[i][columns[4]] + '">' + myList[i][columns[colIndex]] + '</a>';
-
                     //Caso contrário, apenas adicionar o conteúdo em tela
                 } else {
                     cellValue = myList[i][columns[colIndex]];
@@ -39,6 +38,13 @@ function buildHtmlTable(selector, myList) {
 
                 //Dar append à row
                 row$.append($('<td/>').html(cellValue));
+
+                if (colIndex === 3 && myList[i][columns[colIndex]] === 'Amazon') {
+                    row$.append($('<td/>').html('<a href="' + myList[i][columns[4]].replace('&tag=vgabrasil-20' , '').replace('www.', '') + '">' + 'Link </a>'));
+                        
+                        
+                        // myList[i][columns[4]].replace('&tag', '')));
+                }
 
             }
             //Dar append ao objeto da table
@@ -62,6 +68,8 @@ function addAllColumnHeaders(myList, selector) {
             headerTr$.append($('<th/>').html(key));
         }
     }
+    headerTr$.append($('<th/>').html('Link sem afiliado'));
+
     //Dá append no header
     $(selector).append(headerTr$);
 
