@@ -3,6 +3,7 @@ const scraperObject = {
     async scraper(browser) {
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
+        await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36');
         // Navigate to the selected page
         await page.goto(this.url);
         let scrapedData = [];

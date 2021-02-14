@@ -5,10 +5,25 @@ const scraperGKInfoStoreVGA = require('./Scrapers/ScraperGKInfoStoreVGA');
 
 async function scrapeAll(browserInstance) {
     let browser;
-    let results
+    let currentdate = new Date();
+
+    let results = [
+        {
+            Nome: 'Ultima atualização: ' + currentdate.getDate() + "/"
+                + (currentdate.getMonth() + 1) + "/"
+                + currentdate.getFullYear() + " @ "
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds(),
+            ValorAV:  String(0.00),
+            ValorParc: String(0.00),
+            Loja: '',
+            Link: '/'
+        }
+    ]
     try {
         browser = await browserInstance;
-        results = await scraperTerabyteVGA.scraper(browser);
+        results = results.concat(await scraperTerabyteVGA.scraper(browser));
         results = results.concat(await scraperKabumVGA.scraper(browser));
         results = results.concat(await scraperPichauVGA.scraper(browser));
         results = results.concat(await scraperGKInfoStoreVGA.scraper(browser));
