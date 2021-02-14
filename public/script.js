@@ -85,7 +85,7 @@ $(document).ready(() => {
         deleteTable();
     })
 
-    setTimeout(() => {
+    setInterval(() => {
         $('#atualizarLista').click()
     }, 120000);
 })
