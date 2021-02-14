@@ -7,6 +7,8 @@ async function scrapeAll(browserInstance) {
     let browser;
     let currentdate = new Date();
 
+    currentdate.setTime(currentdate.getTime() + currentdate.getTimezoneOffset() * 60 * 1000 - (3) * 60 * 60 * 1000);
+
     let results = [
         {
             Nome: 'Ultima atualização: ' + currentdate.getDate() + "/"
@@ -15,7 +17,7 @@ async function scrapeAll(browserInstance) {
                 + currentdate.getHours() + ":"
                 + currentdate.getMinutes() + ":"
                 + currentdate.getSeconds(),
-            ValorAV:  String(0.00),
+            ValorAV: String(0.00),
             ValorParc: String(0.00),
             Loja: '',
             Link: '/'
