@@ -1,6 +1,6 @@
 const browserObject = require('./Browser.js');
-const scraperController = require('./pageController');
-const createFile = require('./FileCreator');
+const scraperController = require('./pageController.js');
+const createFile = require('./FileCreator.js');
 
 const runTasks = () => {
     //Start the browser and create a browser instance
