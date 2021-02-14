@@ -35,6 +35,7 @@ const scraperObject = {
                             const productName = result.getElementsByClassName('product-item-link')[0].innerText;
                             const productValueString = result.getElementsByClassName('price-boleto')[0].getElementsByTagName('span')[0].innerText;
                             const productValueInstallmentsString = result.getElementsByClassName('price-installments')[0].innerText;
+                            const productLink = result.getElementsByClassName('product-item-link')[0].getAttribute('href');
 
 
                             const productValue = productValueString.replace('à vista', '');
@@ -45,7 +46,8 @@ const scraperObject = {
                                 Nome: productName,
                                 ValorAV: productValue,
                                 ValorParc: productValueInstallments,
-                                Loja: 'Pichau'
+                                Loja: 'Pichau',
+                                Link: productLink
                             });
                         }
                     });

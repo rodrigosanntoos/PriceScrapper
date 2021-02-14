@@ -34,7 +34,7 @@ const scraperObject = {
                             const productName = result.getElementsByClassName('prod-name')[0].innerText;
                             const productValue = result.getElementsByClassName('prod-new-price')[0].getElementsByTagName('span')[0].innerText;
                             const productValueInstallmentsString = result.getElementsByClassName('prod-juros')[0].getElementsByTagName('span')[1].innerText;
-
+                            const productLink = result.getElementsByClassName('prod-name')[0].getAttribute('href');
 
                             const productValueInstallments = 'R$ ' + String((parseFloat(productValueInstallmentsString.replace('R$', '').replace('.', '')) * 12).toFixed(2));
                             //Se o item verificado estiver disponível salva no vetor
@@ -42,7 +42,8 @@ const scraperObject = {
                                 Nome: productName,
                                 ValorAV: productValue,
                                 ValorParc: productValueInstallments,
-                                Loja: 'Terabyte'
+                                Loja: 'Terabyte',
+                                Link: productLink
                             });
                         }
                     });

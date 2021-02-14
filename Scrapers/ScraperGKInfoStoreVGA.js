@@ -35,13 +35,16 @@ const scraperObject = {
                             const productName = result.getElementsByClassName('product-title')[0].getElementsByTagName('h2')[0].innerText;
                             const productValue = result.getElementsByClassName('product-price-final')[0].getElementsByClassName('total')[0].innerText;
                             const productValueInstallments = result.getElementsByClassName('installments')[0].getElementsByClassName('total')[0].innerText;
+                            const productLink = result.getElementsByClassName('product-link')[0].getAttribute('href');
+
 
                             //Se o item verificado estiver disponível salva no vetor
                             resultsInterno.arrayValues.push({
                                 Nome: productName,
                                 ValorAV: productValue,
                                 ValorParc: productValueInstallments,
-                                Loja: 'GKInfoStore'
+                                Loja: 'GKInfoStore',
+                                Link: productLink
                             });
                         }
                     });
