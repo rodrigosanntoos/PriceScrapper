@@ -14,7 +14,7 @@ const scraperObject = {
 
             // Loop through the results and get the description + value
             let getPrices = (link) => new Promise(async (resolve, reject) => {
-               let results = await page.evaluate((resolve, reject) => {
+                let results = await page.evaluate((resolve, reject) => {
                     const resultsInterno = {
                         arrayValues: [],
                         foundUnavailable: false
@@ -29,19 +29,19 @@ const scraperObject = {
                         //Se um item não está disponível, indica que é a última página de resultados
                         if (!isAvailable) {
                             resultsInterno.foundUnavailable = true;
-                        }
+                        } else {
 
-                        //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
-                        const productName = result.getElementsByClassName('item-nome')[0].innerText;
-                        const productValue = result.getElementsByClassName('qatGF')[0].innerText;
-                        const productValueInstallments = result.getElementsByClassName('ksiZrQ')[0].innerText
+                            //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
+                            const productName = result.getElementsByClassName('item-nome')[0].innerText;
+                            const productValue = result.getElementsByClassName('qatGF')[0].innerText;
+                            const productValueInstallments = result.getElementsByClassName('ksiZrQ')[0].innerText;
 
-                        //Se o item verificado estiver disponível salva no vetor
-                        if (isAvailable) { //&&productName.includes(modeloPesquisa)
+                            //Se o item verificado estiver disponível salva no vetor
                             resultsInterno.arrayValues.push({
                                 nome: productName,
                                 valorParc: productValueInstallments,
-                                valorAV: productValue
+                                valorAV: productValue,
+                                loja: 'Kabum'
                             });
                         }
                     });
@@ -52,7 +52,7 @@ const scraperObject = {
             });
 
             let infoFromPage = await getPrices();
-            scrapedData.push(infoFromPage.arrayValues);
+            scrapedData = scrapedData.concat(infoFromPage.arrayValues);
             hasNextPage = !infoFromPage.foundUnavailable;
 
 
