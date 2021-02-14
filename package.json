@@ -19,5 +19,8 @@
   "homepage": "https://github.com/catanineto/PriceScrapper#readme",
   "dependencies": {
     "puppeteer": "^7.1.0"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
   }
 }
