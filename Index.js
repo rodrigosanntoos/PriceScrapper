@@ -1,4 +1,4 @@
-const browserObject = require('./browser');
+const browserObject = require('./Browser.js');
 const scraperController = require('./pageController');
 const createFile = require('./FileCreator');
 
