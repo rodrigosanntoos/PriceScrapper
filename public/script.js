@@ -79,4 +79,8 @@ $(document).ready(() => {
     $('#atualizarLista').on('click', () => {
         deleteTable();
     })
+
+    setTimeout(() => {
+        $('#atualizarLista').click()
+    }, 120000);
 })

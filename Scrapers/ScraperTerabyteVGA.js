@@ -33,16 +33,16 @@ const scraperObject = {
                         } else {
                             //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
                             const productName = result.getElementsByClassName('prod-name')[0].innerText;
-                            const productValue = result.getElementsByClassName('prod-new-price')[0].getElementsByTagName('span')[0].innerText;
+                            const productValue = result.getElementsByClassName('prod-new-price')[0].getElementsByTagName('span')[0].innerText.replace('R$', '').replace('.', '').replace(',', '.');
                             const productValueInstallmentsString = result.getElementsByClassName('prod-juros')[0].getElementsByTagName('span')[1].innerText;
                             const productLink = result.getElementsByClassName('prod-name')[0].getAttribute('href');
 
-                            const productValueInstallments = 'R$ ' + String((parseFloat(productValueInstallmentsString.replace('R$', '').replace('.', '')) * 12).toFixed(2));
+                            const productValueInstallments = String((parseFloat(productValueInstallmentsString.replace('R$', '').replace('.', '')) * 12).toFixed(2)).replace(',', '.');
                             //Se o item verificado estiver disponível salva no vetor
                             resultsInterno.arrayValues.push({
                                 Nome: productName,
-                                ValorAV: productValue,
-                                ValorParc: productValueInstallments,
+                                ValorAV: parseFloat(productValue).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'}),
+                                ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'}),
                                 Loja: 'Terabyte',
                                 Link: productLink
                             });

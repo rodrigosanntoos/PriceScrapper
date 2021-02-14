@@ -4,7 +4,7 @@ const createFile = require('./FileCreator.js');
 const express = require('express')
 
 
-const runTasks = () => {
+const runTasks = (lastTimeout) => {
     //Start the browser and create a browser instance
     let browserInstance = browserObject.startBrowser();
 
@@ -13,14 +13,25 @@ const runTasks = () => {
         //Create the file with the results from the scraper
         createFile(results);
     });
+
+    //Gera um novo timeout de até 10 minutos
+    let newTimeout = Math.random() * 1000 * 600;
+
+    //Se o último timeout foi superior à 5min, e esse também é: Reduz o novo pela metade
+    if (lastTimeout > 300000 && newTimeout > 300000) {
+        newTimeout = newTimeout / 2;
+    };
+
+    //Roda a function novamente após o timeout
+    setTimeout(() => {
+        runTasks(newTimeout);
+    }, newTimeout);
+
 }
 
 var app = express();
 app.use('/', express.static('public'));
 app.listen(process.env.PORT || 8080);
 
-runTasks();
-setInterval(() => {
-    runTasks();
-}, 10 * 60 * 1000)
+runTasks(0);
 

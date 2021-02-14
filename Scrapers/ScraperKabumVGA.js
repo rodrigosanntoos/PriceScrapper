@@ -33,15 +33,15 @@ const scraperObject = {
 
                             //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
                             const productName = result.getElementsByClassName('item-nome')[0].innerText;
-                            const productValue = result.getElementsByClassName('qatGF')[0].innerText;
-                            const productValueInstallments = result.getElementsByClassName('ksiZrQ')[0].innerText;
+                            const productValue = result.getElementsByClassName('qatGF')[0].innerText.replace('R$ ', '').replace('.', '').replace(',', '.');
+                            const productValueInstallments = result.getElementsByClassName('ksiZrQ')[0].innerText.replace ('R$', '').replace('.', '').replace(',', '.');
                             const productLink = 'https://www.kabum.com.br' + result.getElementsByClassName('dIEkef')[0].getElementsByTagName('a')[0].getAttribute('href');
 
                             //Se o item verificado estiver disponível salva no vetor
                             resultsInterno.arrayValues.push({
                                 Nome: productName,
-                                ValorAV: productValue,
-                                ValorParc: productValueInstallments,
+                                ValorAV: parseFloat(productValue).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'}),
+                                ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', {style:'currency', currency: 'BRL'}),
                                 Loja: 'Kabum',
                                 Link: productLink
                             });
