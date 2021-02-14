@@ -22,5 +22,5 @@ app.listen(process.env.PORT || 8080);
 runTasks();
 setInterval(() => {
     runTasks();
-}, 5 * 60 * 1000)
+}, 10 * 60 * 1000)
 

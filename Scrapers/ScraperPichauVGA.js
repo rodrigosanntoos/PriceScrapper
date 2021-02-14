@@ -38,7 +38,7 @@ const scraperObject = {
                             const productLink = result.getElementsByClassName('product-item-link')[0].getAttribute('href');
 
 
-                            const productValue = productValueString.replace('à vista', '');
+                            const productValue = productValueString.replace('à vista', '').replace('R$', 'R$ ');
                             const productValueInstallments = 'R$ ' + String((parseFloat(productValueInstallmentsString.replace('10x de R$', '').replace('.', '')) * 10).toFixed(2));
 
                             //Se o item verificado estiver disponível salva no vetor
