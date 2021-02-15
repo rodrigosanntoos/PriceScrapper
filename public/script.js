@@ -21,11 +21,11 @@ function buildHtmlTable(selector, myList) {
         if (filtros.some(v => myList[i][columns[0]].includes(v)) || filtros.includes('todas') || i === 0) {
             let row$ = $('<tr/>');
 
-            //Para cada coluna do registro, indo de 0 a 3 -> Nome, valor a vista, valor parcelado, Loja. Próximo elemento seria o Link, que não é necessário
+            //Para cada coluna do registro, indo de 0 a 3 -> Modelo, valor a vista, valor parcelado, Loja. Próximo elemento seria o Link, que não é necessário
             for (let colIndex = 0; colIndex <= 3; colIndex++) {
                 let cellValue;
 
-                //Se for a primeira coluna, será o nome onde é necessário adicionar o link
+                //Se for a primeira coluna, será o modelo onde é necessário adicionar o link
                 if (colIndex === 0) {
                     cellValue = '<a href="' + myList[i][columns[4]] + '">' + myList[i][columns[colIndex]] + '</a>';
                     //Caso contrário, apenas adicionar o conteúdo em tela
@@ -60,7 +60,7 @@ function addAllColumnHeaders(myList, selector) {
     for (var key in rowHash) {
         //Adiciona o campo ao columnSet
         columnSet.push(key);
-        //Se for o campo "Link", não adiciona como header pois será linkado no nome
+        //Se for o campo "Link", não adiciona como header pois será linkado no modelo
         if (key !== 'Link') {
             headerTr$.append($('<th/>').html(key));
         }

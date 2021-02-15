@@ -12,7 +12,7 @@ async function scrapeAll(browserInstance) {
 
     let results = [
         {
-            Nome: 'Ultima atualização: ' + currentdate.getDate() + "/"
+            Modelo: 'Última atualização: ' + currentdate.getDate() + "/"
                 + (currentdate.getMonth() + 1) + "/"
                 + currentdate.getFullYear() + " @ "
                 + currentdate.getHours() + ":"

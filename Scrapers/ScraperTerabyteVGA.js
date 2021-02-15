@@ -44,7 +44,7 @@ const scraperObject = {
                                 //Se o item verificado estiver disponível e não consta nas expressões removidas, salva no vetor
                                 if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase()))) {
                                     resultsInterno.arrayValues.push({
-                                        Nome: productName,
+                                        Modelo: productName,
                                         ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
                                         ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
                                         Loja: 'Terabyte',
@@ -69,7 +69,6 @@ const scraperObject = {
             }
         }
         let data = await scrapeCurrentPage();
-        // console.log(data);
         return data;
     }
 }

@@ -4,7 +4,7 @@ const scraperObject = {
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
         await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36');
-        
+
         // Navigate to the selected page
         await page.goto(this.url);
         let scrapedData = [];
@@ -42,7 +42,7 @@ const scraperObject = {
                                 //Se o item verificado não for um dos modelos ignorados, adiciona ao vetor
                                 if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase())) && result.getElementsByTagName('img')[1] === undefined) {
                                     resultsInterno.arrayValues.push({
-                                        Nome: productName,
+                                        Modelo: productName,
                                         ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
                                         ValorParc: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
                                         Loja: 'Amazon',
@@ -73,7 +73,6 @@ const scraperObject = {
             }
         }
         let data = await scrapeCurrentPage();
-        // console.log(data);
         return data;
     }
 }
