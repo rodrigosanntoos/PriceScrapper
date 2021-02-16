@@ -1,8 +1,8 @@
-const scraperKabumVGA = require('./Scrapers/ScraperKabumVGA');
-const scraperTerabyteVGA = require('./Scrapers/ScraperTerabyteVGA')
-const scraperPichauVGA = require('./Scrapers/ScraperPichauVGA');
-const scraperGKInfoStoreVGA = require('./Scrapers/ScraperGKInfoStoreVGA');
-const scraperAmazonVGA = require('./Scrapers/ScraperAmazonVGA');
+const scraperKabumPSU = require('./Scrapers/PSU/ScraperKabumPSU');
+const scraperPichauPSU = require('./Scrapers/PSU/ScraperPichauPSU');
+const scraperTerabytePSU = require('./Scrapers/PSU/scraperTerabytePSU');
+const scraperGKInfoStorePSU = require('./Scrapers/PSU/scraperGKInfoStorePSU');
+
 
 async function scrapeAll(browserInstance) {
     let browser;
@@ -21,16 +21,16 @@ async function scrapeAll(browserInstance) {
             ValorAV: String(0.00),
             ValorParc: String(0.00),
             Loja: '',
+            Watts: '0',
             Link: '/'
         }
     ]
     try {
         browser = await browserInstance;
-        results = results.concat(await scraperTerabyteVGA.scraper(browser));
-        results = results.concat(await scraperKabumVGA.scraper(browser));
-        results = results.concat(await scraperPichauVGA.scraper(browser));
-        results = results.concat(await scraperGKInfoStoreVGA.scraper(browser));
-        results = results.concat(await scraperAmazonVGA.scraper(browser));
+        results = results.concat(await scraperKabumPSU.scraper(browser));
+        results = results.concat(await scraperPichauPSU.scraper(browser));
+        results = results.concat(await scraperTerabytePSU.scraper(browser));
+        results = results.concat(await scraperGKInfoStorePSU.scraper(browser));
 
 
         await browser.close();

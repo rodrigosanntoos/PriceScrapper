@@ -1,8 +1,8 @@
 const buildTable = () => {
-    fetch("Precos.json")
+    fetch("./json/PrecosGPU.json")
         .then(response => response.json())
         .then(mylist => {
-            buildHtmlTable('#precos', mylist);
+            buildHtmlTable('#PrecosGPU', mylist);
         });
 }
 
@@ -39,10 +39,6 @@ function buildHtmlTable(selector, myList) {
                 //Dar append à row
                 row$.append($('<td/>').html(cellValue));
 
-                if (colIndex === 3 && myList[i][columns[colIndex]] === 'Amazon') {
-                    row$.append($('<td/>').html('<a href="' + myList[i][columns[4]].replace('&tag=vgabrasil-20' , '').replace('www.', '') + '">' + 'Link </a>'));
-                }
-
             }
             //Dar append ao objeto da table
             $(selector).append(row$);
@@ -65,7 +61,6 @@ function addAllColumnHeaders(myList, selector) {
             headerTr$.append($('<th/>').html(key));
         }
     }
-    headerTr$.append($('<th/>').html('Link sem afiliado'));
 
     //Dá append no header
     $(selector).append(headerTr$);
@@ -76,13 +71,13 @@ function addAllColumnHeaders(myList, selector) {
 
 
 const deleteTable = () => {
-    $('#precos').empty();
-    buildTable();
+    $('#PrecosGPU').empty();
 }
 
 $(document).ready(() => {
     $('#atualizarLista').on('click', () => {
         deleteTable();
+        buildTable();
     })
 
     setInterval(() => {
