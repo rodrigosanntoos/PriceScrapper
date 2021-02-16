@@ -1,7 +1,7 @@
 const scraperKabumPSU = require('./Scrapers/PSU/ScraperKabumPSU');
 const scraperPichauPSU = require('./Scrapers/PSU/ScraperPichauPSU');
 const scraperTerabytePSU = require('./Scrapers/PSU/ScraperTerabytePSU');
-const scraperGKInfoStorePSU = require('./Scrapers/PSU/ScraperGKInfoStorePSU');
+const scraperGKInfoStorePSU = require('./Scrapers/PSU/scraperGKInfoStorePSU');
 
 
 async function scrapeAll(browserInstance) {
