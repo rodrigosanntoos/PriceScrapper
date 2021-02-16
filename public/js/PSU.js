@@ -103,9 +103,9 @@ $(() => {
 
     $("#sliderWatts").slider({
         range: true,
-        min: 0,
+        min: 500,
         max: 2000,
-        values: [300, 1500],
+        values: [500, 1500],
         slide: function (event, ui) {
             $("#wattsFilter").val(ui.values[0] + "W - " + ui.values[1] + "W");
         }

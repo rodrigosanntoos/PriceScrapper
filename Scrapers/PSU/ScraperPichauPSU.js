@@ -49,15 +49,17 @@ const scraperObject = {
                                 const productValue = productValueString.replace('à vista', '').replace('R$', '').replace('.', '').replace(',', '.');
                                 const productValueInstallments = String((parseFloat(productValueInstallmentsString.replace('10x de R$', '').replace('.', '')) * 10).toFixed(2));
 
-                                //Se o item verificado estiver disponível salva no vetor
-                                resultsInterno.arrayValues.push({
-                                    Modelo: productName,
-                                    ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                    ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                    Loja: 'Pichau',
-                                    Link: productLink,
-                                    Watts: productWatts
-                                });
+                                if (productWatts >= 500) {
+                                    //Se o item verificado estiver disponível salva no vetor
+                                    resultsInterno.arrayValues.push({
+                                        Modelo: productName,
+                                        ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                        ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                        Loja: 'Pichau',
+                                        Link: productLink,
+                                        Watts: productWatts
+                                    });
+                                }
 
                             }
                         });
