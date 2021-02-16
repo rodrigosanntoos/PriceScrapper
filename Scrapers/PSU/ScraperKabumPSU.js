@@ -41,17 +41,15 @@ const scraperObject = {
                                 const productValueInstallments = result.getElementsByClassName('ksiZrQ')[0].innerText.replace('R$', '').replace('.', '').replace(',', '.');
                                 const productLink = 'https://www.kabum.com.br' + result.getElementsByClassName('dIEkef')[0].getElementsByTagName('a')[0].getAttribute('href');
 
-                                if (productWatts >= 500) {
-                                    //Se o item verificado estiver disponível salva no vetor
-                                    resultsInterno.arrayValues.push({
-                                        Modelo: productName,
-                                        ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                        ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                        Loja: 'Kabum',
-                                        Link: productLink,
-                                        Watts: productWatts
-                                    });
-                                }
+                                //Se o item verificado estiver disponível salva no vetor
+                                resultsInterno.arrayValues.push({
+                                    Modelo: productName,
+                                    ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                    ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                    Loja: 'Kabum',
+                                    Link: productLink,
+                                    Watts: productWatts
+                                });
                             }
                         });
                         return resultsInterno;

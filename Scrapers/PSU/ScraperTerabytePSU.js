@@ -45,17 +45,16 @@ const scraperObject = {
 
                                 const productValueInstallments = String((parseFloat(productValueInstallmentsString.replace('R$', '').replace('.', '')) * 12).toFixed(2)).replace(',', '.');
 
-                                if (productWatts >= 500) {
-                                    //Se o item verificado estiver disponível salva no vetor
-                                    resultsInterno.arrayValues.push({
-                                        Modelo: productName,
-                                        ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                        ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                        Loja: 'Terabyte',
-                                        Link: productLink,
-                                        Watts: productWatts
-                                    });
-                                }
+
+                                //Se o item verificado estiver disponível salva no vetor
+                                resultsInterno.arrayValues.push({
+                                    Modelo: productName,
+                                    ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                    ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                    Loja: 'Terabyte',
+                                    Link: productLink,
+                                    Watts: productWatts
+                                });
 
                             }
                         });
