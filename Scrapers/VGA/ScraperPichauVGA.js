@@ -71,11 +71,11 @@ const scraperObject = {
                     await page.click('.next');
                     return scrapeCurrentPage(); // Call this function recursively
                 }
-                await page.close();
             } catch {
                 return scrapedData;
             } finally {
                 if (!hasNextPage) {
+                    await page.close();
                     return scrapedData;
                 }
             }

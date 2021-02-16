@@ -45,7 +45,7 @@ const scraperObject = {
 
                                 const productValueInstallments = String((parseFloat(productValueInstallmentsString.replace('R$', '').replace('.', '')) * 12).toFixed(2)).replace(',', '.');
 
-                                if (productWatts >= 500) {
+                                if (productWatts >= 500 && productName.includes('80')) {
                                     //Se o item verificado estiver disponível salva no vetor
                                     resultsInterno.arrayValues.push({
                                         Modelo: productName,
@@ -68,10 +68,10 @@ const scraperObject = {
                 let infoFromPage = await getPrices();
                 scrapedData = scrapedData.concat(infoFromPage.arrayValues);
 
-                await page.close();
             } catch {
                 return scrapedData;
             } finally {
+                await page.close();
                 return scrapedData;
             }
         }
