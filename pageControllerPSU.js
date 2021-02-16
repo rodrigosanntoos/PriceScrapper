@@ -1,6 +1,6 @@
 const scraperKabumPSU = require('./Scrapers/PSU/ScraperKabumPSU');
 const scraperPichauPSU = require('./Scrapers/PSU/ScraperPichauPSU');
-const scraperTerabytePSU = require('./Scrapers/PSU/ScraperTerabytePSUs');
+const scraperTerabytePSU = require('./Scrapers/PSU/scraperTerabytePSU');
 const scraperGKInfoStorePSU = require('./Scrapers/PSU/scraperGKInfoStorePSU');
 
 
