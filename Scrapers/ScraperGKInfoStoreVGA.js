@@ -27,6 +27,7 @@ const scraperObject = {
 
                             //isAvailable = Verifica se existem classe que indica o botão comprar. Pode existir botão de pré-venda, portanto não pode verificar a classe de indisponível
                             const isAvailable = result.getElementsByClassName('product-buy-button ').length > 0;
+                            const expressoesRemovidas = ['Quadro', 'Osprey', 'Conferencia', 'Titan', 'Expansora', 'Screen Share', 'Radeon Pro', 'Microfone', 'Suporte', 'GT 710', 'GT 730', 'R5 2020', 'Cabo de extensão', 'G210', 'R7 240', 'GT 1030', ' 1GB', ' 2GB', ' 3GB', ' 4GB', '1050Ti', '1050', 'RX 550 ', 'Case para', 'Conferência'];
 
 
                             //Se um item não está disponível, indica que é a última página de resultados
@@ -36,26 +37,21 @@ const scraperObject = {
 
                                 //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
                                 const productName = result.getElementsByClassName('product-title')[0].getElementsByTagName('h2')[0].innerText;
-                                let productWatts = productName.match(/[0-9]{3,4}W/i);
-
-                                if (!productWatts) {
-                                    productWatts = productName.match(/[0-9]{3,4}/i) + 'W';
-                                }
                                 const productValue = result.getElementsByClassName('product-price-final')[0].getElementsByClassName('total')[0].innerText.replace('R$ ', '').replace('.', '').replace(',', '.');
                                 const productValueInstallments = result.getElementsByClassName('installments')[0].getElementsByClassName('total')[0].innerText.replace('R$ ', '').replace('.', '').replace(',', '.');
                                 const productLink = result.getElementsByClassName('product-link')[0].getAttribute('href');
 
 
-                                //Se o item verificado estiver disponível salva no vetor
-                                resultsInterno.arrayValues.push({
-                                    Modelo: productName,
-                                    ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                    ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                    Loja: 'GKInfoStore',
-                                    Link: productLink,
-                                    Watts: productWatts
-                                });
-
+                                //Se o item verificado estiver disponível e não consta nas expressões removidas, salva no vetor
+                                if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase()))) {
+                                    resultsInterno.arrayValues.push({
+                                        Modelo: productName,
+                                        ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                        ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                        Loja: 'GKInfoStore',
+                                        Link: productLink
+                                    });
+                                }
                             }
                         });
                         return resultsInterno;
@@ -74,12 +70,9 @@ const scraperObject = {
                     return scrapeCurrentPage(); // Call this function recursively
                 }
                 await page.close();
-            } catch {
                 return scrapedData;
-            } finally {
-                if (!hasNextPage) {
-                    return scrapedData;
-                }
+            } catch {
+                return [];
             }
         }
         let data = await scrapeCurrentPage();

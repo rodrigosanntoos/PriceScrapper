@@ -1,5 +1,5 @@
 const scraperObject = {
-    url: 'https://www.pichau.com.br/hardware/fonte?product_list_limit=48&product_list_order=price',
+    url: 'https://www.pichau.com.br/hardware/placa-de-video?product_list_limit=48&product_list_order=price',
     async scraper(browser) {
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
@@ -27,6 +27,7 @@ const scraperObject = {
 
                             //isAvailable = Verifica se existem classes que indicam item indisponível
                             const isAvailable = result.getElementsByClassName('unavailable').length === 0;
+                            const expressoesRemovidas = ['Quadro', 'Osprey', 'Conferencia', 'Titan', 'Expansora', 'Screen Share', 'Radeon Pro', 'Microfone', 'Suporte', 'GT 710', 'GT 730', 'R5 2020', 'Cabo de extensão', 'G210', 'R7 240', 'GT 1030', ' 1GB', ' 2GB', ' 3GB', ' 4GB', '1050Ti', '1050', 'RX 550 ', 'Case para', 'Conferência'];
 
                             //Se um item não está disponível, indica que é a última página de resultados
                             if (!isAvailable) {
@@ -35,12 +36,6 @@ const scraperObject = {
 
                                 //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
                                 const productName = result.getElementsByClassName('product-item-link')[0].innerText;
-                                let productWatts = productName.match(/[0-9]{3,4}W/i);
-
-                                if (!productWatts) {
-                                    productWatts = productName.match(/[0-9]{3,4}/i) + 'W';
-                                }
-
                                 const productValueString = result.getElementsByClassName('price-boleto')[0].getElementsByTagName('span')[0].innerText;
                                 const productValueInstallmentsString = result.getElementsByClassName('price-installments')[0].innerText;
                                 const productLink = result.getElementsByClassName('product-item-link')[0].getAttribute('href');
@@ -49,16 +44,16 @@ const scraperObject = {
                                 const productValue = productValueString.replace('à vista', '').replace('R$', '').replace('.', '').replace(',', '.');
                                 const productValueInstallments = String((parseFloat(productValueInstallmentsString.replace('10x de R$', '').replace('.', '')) * 10).toFixed(2));
 
-                                //Se o item verificado estiver disponível salva no vetor
-                                resultsInterno.arrayValues.push({
-                                    Modelo: productName,
-                                    ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                    ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                    Loja: 'Pichau',
-                                    Link: productLink,
-                                    Watts: productWatts
-                                });
-
+                                //Se o item verificado estiver disponível e não consta nas expressões removidas, salva no vetor
+                                if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase()))) {
+                                    resultsInterno.arrayValues.push({
+                                        Modelo: productName,
+                                        ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                        ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                        Loja: 'Pichau',
+                                        Link: productLink
+                                    });
+                                }
                             }
                         });
                         return resultsInterno;
@@ -77,14 +72,11 @@ const scraperObject = {
                     return scrapeCurrentPage(); // Call this function recursively
                 }
                 await page.close();
-            } catch {
                 return scrapedData;
-            } finally {
-                if (!hasNextPage) {
-                    return scrapedData;
-                }
+            } catch {
+                return [];
             }
-        }
+    }
         let data = await scrapeCurrentPage();
         return data;
     }

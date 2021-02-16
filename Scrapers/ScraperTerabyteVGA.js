@@ -1,5 +1,5 @@
 const scraperObject = {
-    url: 'https://www.terabyteshop.com.br/hardware/fontes',
+    url: 'https://www.terabyteshop.com.br/hardware/placas-de-video',
     async scraper(browser) {
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
@@ -26,6 +26,7 @@ const scraperObject = {
 
                             //isAvailable = Verifica se existem classes que indicam item indisponível
                             const isAvailable = result.getElementsByClassName('tbt_esgotado').length === 0;
+                            const expressoesRemovidas = ['Quadro', 'Osprey', 'Conferencia', 'Titan', 'Expansora', 'Screen Share', 'Radeon Pro', 'Microfone', 'Suporte', 'GT 710', 'GT 730', 'R5 2020', 'Cabo de extensão', 'G210', 'R7 240', 'GT 1030', ' 1GB', ' 2GB', ' 3GB', ' 4GB', '1050Ti', '1050', 'RX 550 ', 'Case para', 'Conferência'];
 
                             //Se um item não está disponível, indica que é a última página de resultados
                             if (!isAvailable) {
@@ -33,12 +34,6 @@ const scraperObject = {
                             } else {
                                 //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
                                 const productName = result.getElementsByClassName('prod-name')[0].innerText;
-                                let productWatts = productName.match(/[0-9]{3,4}W/i);
-
-                                if (!productWatts) {
-                                    productWatts = productName.match(/[0-9]{3,4}/i) + 'W';
-                                }
-
                                 const productValue = result.getElementsByClassName('prod-new-price')[0].getElementsByTagName('span')[0].innerText.replace('R$', '').replace('.', '').replace(',', '.');
                                 const productValueInstallmentsString = result.getElementsByClassName('prod-juros')[0].getElementsByTagName('span')[1].innerText;
                                 const productLink = result.getElementsByClassName('prod-name')[0].getAttribute('href');
@@ -46,16 +41,16 @@ const scraperObject = {
                                 const productValueInstallments = String((parseFloat(productValueInstallmentsString.replace('R$', '').replace('.', '')) * 12).toFixed(2)).replace(',', '.');
 
 
-                                //Se o item verificado estiver disponível salva no vetor
-                                resultsInterno.arrayValues.push({
-                                    Modelo: productName,
-                                    ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                    ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                    Loja: 'Terabyte',
-                                    Link: productLink,
-                                    Watts: productWatts
-                                });
-
+                                //Se o item verificado estiver disponível e não consta nas expressões removidas, salva no vetor
+                                if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase()))) {
+                                    resultsInterno.arrayValues.push({
+                                        Modelo: productName,
+                                        ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                        ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                                        Loja: 'Terabyte',
+                                        Link: productLink
+                                    });
+                                }
                             }
                         });
                         return resultsInterno;
@@ -68,10 +63,9 @@ const scraperObject = {
                 scrapedData = scrapedData.concat(infoFromPage.arrayValues);
 
                 await page.close();
+                return scrapedData;
             } catch {
-                return scrapedData;
-            } finally {
-                return scrapedData;
+                return [];
             }
         }
         let data = await scrapeCurrentPage();
