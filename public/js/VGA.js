@@ -27,14 +27,15 @@ function buildHtmlTable(selector, myList) {
     //Para cada registro da lista
     for (var i = 0; i < myList.length; i++) {
 
-        if (alerts.some(v => {
-            return myList[i][columns[0]].includes(v.Nome)
-                && Number(myList[i][columns[1]].replace('R$', '').replace('.', '').replace(',', '.')) <= v.Valor
-        })) {
-            shouldAlert = true;
-        }
+
         //Traz somente as placas do filtro, ou todas, caso marcado o checkbox de todas
         if (filtros.some(v => myList[i][columns[0]].includes(v)) || filtros.includes('todas') || i === 0) {
+            if (alerts.some(v => {
+                return myList[i][columns[0]].includes(v.Nome)
+                    && Number(myList[i][columns[1]].replace('R$', '').replace('.', '').replace(',', '.')) <= v.Valor
+            })) {
+                shouldAlert = true;
+            }
             let row$ = $('<tr/>');
 
             //Para cada coluna do registro, indo de 0 a 3 -> Modelo, valor a vista, valor parcelado, Loja. Próximo elemento seria o Link, que não é necessário
