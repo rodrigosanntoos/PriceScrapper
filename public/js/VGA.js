@@ -1,11 +1,18 @@
+const alerts = [];
+const audio = new Audio('../Audio/Alerta.ogg');
+let sinalSonoro = false;
 const buildTable = () => {
-    fetch("Precos.json")
+    fetch("../Precos.json")
         .then(response => response.json())
         .then(mylist => {
-            buildHtmlTable('#precos', mylist);
+            buildHtmlTable('#PrecosGPU', mylist);
         });
 }
 
+
+const shouldAlert = (element, index, array) => {
+    return myList[i][columns[0]].includes(element.Nome) && Number(myList[i][columns[1]].replace('R$', '').replace('.', '').replace(',', '.') <= element.Valor);
+}
 // Monta a table HTML a partir do JSON
 function buildHtmlTable(selector, myList) {
     //Adiciona os headers
@@ -15,8 +22,17 @@ function buildHtmlTable(selector, myList) {
         filtros.push(checkboxesMarcadas.value);
     }
 
+    let shouldAlert = false;
+    sinalSonoro = $('#filtroSonoro').is(':checked');
     //Para cada registro da lista
     for (var i = 0; i < myList.length; i++) {
+
+        if (alerts.some(v => {
+            return myList[i][columns[0]].includes(v.Nome)
+                && Number(myList[i][columns[1]].replace('R$', '').replace('.', '').replace(',', '.')) <= v.Valor
+        })) {
+            shouldAlert = true;
+        }
         //Traz somente as placas do filtro, ou todas, caso marcado o checkbox de todas
         if (filtros.some(v => myList[i][columns[0]].includes(v)) || filtros.includes('todas') || i === 0) {
             let row$ = $('<tr/>');
@@ -40,13 +56,21 @@ function buildHtmlTable(selector, myList) {
                 row$.append($('<td/>').html(cellValue));
 
                 if (colIndex === 3 && myList[i][columns[colIndex]] === 'Amazon') {
-                    row$.append($('<td/>').html('<a href="' + myList[i][columns[4]].replace('&tag=vgabrasil-20' , '').replace('www.', '') + '">' + 'Link </a>'));
+                    row$.append($('<td/>').html('<a href="' + myList[i][columns[4]].replace('&tag=vgabrasil-20', '').replace('www.', '') + '">' + 'Link </a>'));
                 }
 
             }
             //Dar append ao objeto da table
             $(selector).append(row$);
         }
+    }
+
+    if (shouldAlert) {
+        if (sinalSonoro) {
+            audio.play();
+        }
+        alert('Um dos seus itens monitorados foi encontrado!');
+
     }
 }
 
@@ -76,13 +100,27 @@ function addAllColumnHeaders(myList, selector) {
 
 
 const deleteTable = () => {
-    $('#precos').empty();
+    $('#PrecosGPU').empty();
     buildTable();
 }
 
 $(document).ready(() => {
     $('#atualizarLista').on('click', () => {
         deleteTable();
+    })
+
+    $('#criarAlerta').on('click', () => {
+
+        let nome = $('#filtrokeyWord').val();
+        let valor = $('#filtroValue').val()
+        alerts.push({
+            Nome: nome,
+            Valor: valor
+        });
+        $('#containerMonitoramento').append('<p><b>Palavra chave:</b> ' + nome + '. <b>Valor:</b> ' + valor + ' </p>');
+        $('#filtrokeyWord').val('');
+        $('#filtroValue').val('');
+
     })
 
     setInterval(() => {

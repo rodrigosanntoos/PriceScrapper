@@ -1,5 +1,5 @@
 const scraperObject = {
-    url: 'https://www.kabum.com.br/hardware/placa-de-video-vga?pagina=1&ordem=3&limite=100&prime=false&marcas=[]&tipo_produto=[]&filtro=[]',
+    url: 'https://www.pichau.com.br/hardware/placa-de-video?product_list_limit=48&product_list_order=price',
     async scraper(browser) {
         let page = await browser.newPage();
         console.log(`Navigating to ${this.url}...`);
@@ -10,7 +10,8 @@ const scraperObject = {
         // Wait for the required DOM to be rendered
         async function scrapeCurrentPage() {
             try {
-                await page.waitForSelector('.wjuxx');
+
+                await page.waitForSelector('.products-grid');
 
 
                 // Loop through the results and get the description + value
@@ -20,12 +21,12 @@ const scraperObject = {
                             arrayValues: [],
                             foundUnavailable: false
                         };
-                        document.querySelectorAll('div.jmuOAh').forEach((result) => {
+                        document.querySelectorAll('.product-item').forEach((result) => {
 
 
 
                             //isAvailable = Verifica se existem classes que indicam item indisponível
-                            const isAvailable = result.getElementsByClassName('jLtPVV').length === 0;
+                            const isAvailable = result.getElementsByClassName('unavailable').length === 0;
                             const expressoesRemovidas = ['Quadro', 'Osprey', 'Conferencia', 'Titan', 'Expansora', 'Screen Share', 'Radeon Pro', 'Microfone', 'Suporte', 'GT 710', 'GT 730', 'R5 2020', 'Cabo de extensão', 'G210', 'R7 240', 'GT 1030', ' 1GB', ' 2GB', ' 3GB', ' 4GB', '1050Ti', '1050', 'RX 550 ', 'Case para', 'Conferência'];
 
                             //Se um item não está disponível, indica que é a última página de resultados
@@ -34,10 +35,14 @@ const scraperObject = {
                             } else {
 
                                 //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
-                                const productName = result.getElementsByClassName('item-nome')[0].innerText;
-                                const productValue = result.getElementsByClassName('qatGF')[0].innerText.replace('R$ ', '').replace('.', '').replace(',', '.');
-                                const productValueInstallments = result.getElementsByClassName('ksiZrQ')[0].innerText.replace('R$', '').replace('.', '').replace(',', '.');
-                                const productLink = 'https://www.kabum.com.br' + result.getElementsByClassName('dIEkef')[0].getElementsByTagName('a')[0].getAttribute('href');
+                                const productName = result.getElementsByClassName('product-item-link')[0].innerText;
+                                const productValueString = result.getElementsByClassName('price-boleto')[0].getElementsByTagName('span')[0].innerText;
+                                const productValueInstallmentsString = result.getElementsByClassName('price-installments')[0].innerText;
+                                const productLink = result.getElementsByClassName('product-item-link')[0].getAttribute('href');
+
+
+                                const productValue = productValueString.replace('à vista', '').replace('R$', '').replace('.', '').replace(',', '.');
+                                const productValueInstallments = String((parseFloat(productValueInstallmentsString.replace('10x de R$', '').replace('.', '')) * 10).toFixed(2));
 
                                 //Se o item verificado estiver disponível e não consta nas expressões removidas, salva no vetor
                                 if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase()))) {
@@ -45,7 +50,7 @@ const scraperObject = {
                                         Modelo: productName,
                                         ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
                                         ValorParc: parseFloat(productValueInstallments).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
-                                        Loja: 'Kabum',
+                                        Loja: 'Pichau',
                                         Link: productLink
                                     });
                                 }
@@ -63,13 +68,16 @@ const scraperObject = {
 
 
                 if (hasNextPage) {
-                    await page.click('.hEjrXm');
+                    await page.click('.next');
                     return scrapeCurrentPage(); // Call this function recursively
                 }
-                await page.close();
-                return scrapedData;
             } catch {
-                return [];
+                return scrapedData;
+            } finally {
+                if (!hasNextPage) {
+                    await page.close();
+                    return scrapedData;
+                }
             }
         }
         let data = await scrapeCurrentPage();

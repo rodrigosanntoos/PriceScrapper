@@ -62,10 +62,11 @@ const scraperObject = {
                 let infoFromPage = await getPrices();
                 scrapedData = scrapedData.concat(infoFromPage.arrayValues);
 
+            } catch {
+                return scrapedData;
+            } finally {
                 await page.close();
                 return scrapedData;
-            } catch {
-                return [];
             }
         }
         let data = await scrapeCurrentPage();
