@@ -1,5 +1,4 @@
 const alerts = [];
-const audio = new Audio('../Audio/Alerta.ogg');
 let sinalSonoro = false;
 const buildTable = () => {
     fetch("../Precos.json")
@@ -68,7 +67,8 @@ function buildHtmlTable(selector, myList) {
 
     if (shouldAlert) {
         if (sinalSonoro) {
-            audio.play();
+            document.getElementById('audioAlert').play();
+
         }
         alert('Um dos seus itens monitorados foi encontrado!');
 
