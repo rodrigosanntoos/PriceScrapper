@@ -17,7 +17,7 @@ function buildHtmlTable(selector, myList) {
     //Adiciona os headers
     let columns = addAllColumnHeaders(myList, selector);
     const filtros = [];
-    for (let checkboxesMarcadas of $('input[type=checkbox]:checked')) {
+    for (let checkboxesMarcadas of $('.filterLeft input[type=checkbox]:checked')) {
         filtros.push(checkboxesMarcadas.value);
     }
 
