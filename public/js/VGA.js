@@ -55,10 +55,6 @@ function buildHtmlTable(selector, myList) {
                 //Dar append à row
                 row$.append($('<td/>').html(cellValue));
 
-                if (colIndex === 3 && myList[i][columns[colIndex]] === 'Amazon') {
-                    row$.append($('<td/>').html('<a href="' + myList[i][columns[4]].replace('&tag=vgabrasil-20', '').replace('www.', '') + '">' + 'Link </a>'));
-                }
-
             }
             //Dar append ao objeto da table
             $(selector).append(row$);
@@ -68,7 +64,6 @@ function buildHtmlTable(selector, myList) {
     if (shouldAlert) {
         if (sinalSonoro) {
             document.getElementById('audioAlert').play();
-
         }
         alert('Um dos seus itens monitorados foi encontrado!');
 
@@ -90,7 +85,6 @@ function addAllColumnHeaders(myList, selector) {
             headerTr$.append($('<th/>').html(key));
         }
     }
-    headerTr$.append($('<th/>').html('Link sem afiliado'));
 
     //Dá append no header
     $(selector).append(headerTr$);
