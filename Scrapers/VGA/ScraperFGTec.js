@@ -35,7 +35,7 @@ const scraperObject = {
                                 //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
                                 const productName = result.getElementsByClassName('product-card__title')[0].getElementsByTagName('span')[0].innerText;
                                 const productValue = result.getElementsByClassName('product-card__price__final')[0].getElementsByClassName('price')[0].innerText.replace('R$', '').replace('.', '').replace(',', '.');
-                                const productValueInstallments = result.getElementsByClassName('product-card__price__installment')[0].getElementsByTagName('span')[0].getElementsByClassName('text')[0].innerText.replace('R$', '').replace('.', '').replace(',', '.');
+                                const productValueInstallments = result.getElementsByClassName('product-card__price__installment')[0].getElementsByTagName('span')[0].getElementsByClassName('text')[0].innerText.replace('R$', '').replace('.', '').replace(',', '.').replace('ou', '');
                                 const productLink = result.getElementsByClassName('product-card__buy-button')[0].getElementsByTagName('a')[0].getAttribute('href');
 
                                 //Se o item verificado estiver disponível e não consta nas expressões removidas, salva no vetor
