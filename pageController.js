@@ -46,8 +46,8 @@ async function scrapeAll(browserInstance) {
 }
 
 const orderArray = (a, b) => {
-    valorAvA = parseFloat(a.ValorAV.replace('R$', '').replace('.', '').replace(',', '.'));
-    valorAvB = parseFloat(b.ValorAV.replace('R$', '').replace('.', '').replace(',', '.'));
+    const valorAvA = parseFloat(a.ValorAV.replace('R$', '').replace('.', '').replace(',', '.'));
+    const valorAvB = parseFloat(b.ValorAV.replace('R$', '').replace('.', '').replace(',', '.'));
 
     if (valorAvA < valorAvB) {
         return -1;

@@ -8,17 +8,17 @@ const buildTable = () => {
         });
 }
 
-
-const shouldAlert = (element, index, array) => {
-    return myList[i][columns[0]].includes(element.Nome) && Number(myList[i][columns[1]].replace('R$', '').replace('.', '').replace(',', '.') <= element.Valor);
-}
 // Monta a table HTML a partir do JSON
 function buildHtmlTable(selector, myList) {
     //Adiciona os headers
     let columns = addAllColumnHeaders(myList, selector);
     const filtros = [];
     for (let checkboxesMarcadas of $('.filterLeft input[type=checkbox]:checked')) {
-        filtros.push(checkboxesMarcadas.value);
+        if (checkboxesMarcadas.value !== '3060') {
+            filtros.push(new RegExp(formatName(checkboxesMarcadas.value), 'g'));
+        } else if (checkboxesMarcadas.value === '3060') {
+            filtros.push(new RegExp(formatName('3060[^ti]'), 'g'));
+        }
     }
 
     let shouldAlert = false;
@@ -26,12 +26,14 @@ function buildHtmlTable(selector, myList) {
     //Para cada registro da lista
     for (var i = 0; i < myList.length; i++) {
 
-
+        const formattedName = formatName(myList[i][columns[0]]);
+        const todasChecked = $('#filtertodas:checked').length > 0;
         //Traz somente as placas do filtro, ou todas, caso marcado o checkbox de todas
-        if (filtros.some(v => myList[i][columns[0]].includes(v)) || filtros.includes('todas') || i === 0) {
+        if (filtros.some(v => formattedName.match(v)) || todasChecked || i === 0) {
+
             if (alerts.some(v => {
-                return myList[i][columns[0]].includes(v.Nome)
-                    && Number(myList[i][columns[1]].replace('R$', '').replace('.', '').replace(',', '.')) <= v.Valor
+                return formattedName.includes(v.Nome)
+                    && formatValue(myList[i][columns[1]]) <= v.Valor
             })) {
                 shouldAlert = true;
             }
@@ -41,7 +43,7 @@ function buildHtmlTable(selector, myList) {
             for (let colIndex = 0; colIndex <= 3; colIndex++) {
                 let cellValue;
 
-                //Se for a primeira coluna, será o modelo onde é necessário adicionar o link
+                //Se for a primeira coluna, será o modelo - onde é necessário adicionar o link
                 if (colIndex === 0) {
                     cellValue = '<a href="' + myList[i][columns[4]] + '">' + myList[i][columns[colIndex]] + '</a>';
                     //Caso contrário, apenas adicionar o conteúdo em tela
@@ -49,7 +51,7 @@ function buildHtmlTable(selector, myList) {
                     cellValue = myList[i][columns[colIndex]];
                 }
 
-                //See for nulo, adicionar string vazia
+                //Se for nulo, adicionar string vazia
                 if (cellValue == null) cellValue = "";
 
                 //Dar append à row
@@ -66,8 +68,8 @@ function buildHtmlTable(selector, myList) {
             document.getElementById('audioAlert').play();
         }
         alert('Um dos seus itens monitorados foi encontrado!');
-
     }
+
 }
 
 function addAllColumnHeaders(myList, selector) {
@@ -99,6 +101,14 @@ const deleteTable = () => {
     buildTable();
 }
 
+const formatValue = (value) => {
+    return Number(value.replace('R$', '').replaceAll('.', '').replaceAll(',', '.'));
+}
+
+const formatName = (name) => {
+    return name.toUpperCase().replaceAll(' ', '');
+}
+
 $(document).ready(() => {
     $('#atualizarLista').on('click', () => {
         deleteTable();
@@ -109,7 +119,7 @@ $(document).ready(() => {
         let nome = $('#filtrokeyWord').val();
         let valor = $('#filtroValue').val()
         alerts.push({
-            Nome: nome,
+            Nome: formatName(nome),
             Valor: valor
         });
         $('#containerMonitoramento').append('<p><b>Palavra chave:</b> ' + nome + '. <b>Valor:</b> ' + valor + ' </p>');
