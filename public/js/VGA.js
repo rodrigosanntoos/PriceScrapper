@@ -109,6 +109,29 @@ const formatName = (name) => {
     return name.toUpperCase().replaceAll(' ', '');
 }
 
+const saveAlert = (name, value) => {
+    alerts.push({
+        Nome: formatName(name),
+        Valor: value
+    });
+    $('#containerMonitoramento').append('<p><b>Palavra chave:</b> ' + name + '. <b>Valor:</b> ' + value + ' </p>');
+}
+
+const readParams = () => {
+
+    const url = new URL(window.location.href);
+
+    let params = url.search;
+    params = params.replace('?', '');
+
+    const paramsArray = params.split('&');
+
+    for (let param of paramsArray) {
+        const splittedParam = param.split('=');
+        saveAlert(splittedParam[0], splittedParam[1]);
+    }
+}
+
 $(document).ready(() => {
     $('#atualizarLista').on('click', () => {
         deleteTable();
@@ -116,19 +139,38 @@ $(document).ready(() => {
 
     $('#criarAlerta').on('click', () => {
 
+        //Obtem os valores preenchidos pelo usuário
         let nome = $('#filtrokeyWord').val();
-        let valor = $('#filtroValue').val()
-        alerts.push({
-            Nome: formatName(nome),
-            Valor: valor
-        });
-        $('#containerMonitoramento').append('<p><b>Palavra chave:</b> ' + nome + '. <b>Valor:</b> ' + valor + ' </p>');
+        let valor = $('#filtroValue').val();
+
+        //Cria o alerta
+        saveAlert(nome, valor);
+
+        //Limpa os valores dos campos
         $('#filtrokeyWord').val('');
         $('#filtroValue').val('');
 
+        // Pega a URL da página
+        let url = window.location.href;
+
+        //Coloca os parâmetros, de acordo se já existem outros ou não
+        if (url.indexOf('?') > -1) {
+            url += '&' + nome + '=' + valor;
+        } else {
+            url += '?' + nome + '=' + valor;
+        }
+
+        // Atualiza a URL no navegador para ter os parâmetros junto
+        window.history.replaceState(null, null, url);
+
     })
 
+    // Atualiza a lista a cada 2 minutos
     setInterval(() => {
         $('#atualizarLista').click()
     }, 120000);
+
+    //Carrega os alertas salvos na URL
+    readParams();
+
 })
