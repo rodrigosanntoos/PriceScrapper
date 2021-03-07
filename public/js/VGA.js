@@ -122,13 +122,16 @@ const readParams = () => {
     const url = new URL(window.location.href);
 
     let params = url.search;
-    params = params.replace('?', '');
 
-    const paramsArray = params.split('&');
+    if (params) {
+        params = params.replace('?', '');
 
-    for (let param of paramsArray) {
-        const splittedParam = param.split('=');
-        saveAlert(splittedParam[0], splittedParam[1]);
+        const paramsArray = params.split('&');
+
+        for (let param of paramsArray) {
+            const splittedParam = param.split('=');
+            saveAlert(splittedParam[0], splittedParam[1]);
+        }
     }
 }
 
