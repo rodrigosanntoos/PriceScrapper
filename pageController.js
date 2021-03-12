@@ -34,14 +34,13 @@ async function scrapeAll(browserInstance) {
         results = results.concat(await scraperGKInfoStoreVGA.scraper(browser));
         results = results.concat(await scraperAmazonVGA.scraper(browser));
 
-
-        await browser.close();
-
         results.sort(orderArray);
         return results;
     }
     catch (err) {
         console.log("Could not resolve the browser instance => ", err);
+    } finally {
+        await browser.close();
     }
 }
 

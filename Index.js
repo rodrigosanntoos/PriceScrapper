@@ -14,11 +14,11 @@ const runTasks = (lastTimeout) => {
         createFile(results);
     });
 
-    //Gera um novo timeout de até 15 minutos
-    let newTimeout = Math.random() * 1000 * 900;
+    //Gera um novo timeout de até 10 minutos
+    let newTimeout = Math.random() * 1000 * 600;
 
-    //Se o último timeout foi superior à 8min, e esse também é: Reduz o novo pela metade
-    if (lastTimeout > 480000 && newTimeout > 480000) {
+    //Se o último timeout foi superior à 4min, e esse também é: Reduz o novo pela metade
+    if (lastTimeout > 240000 && newTimeout > 240000) {
         newTimeout = newTimeout / 2;
     };
 
