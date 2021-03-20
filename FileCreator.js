@@ -1,12 +1,16 @@
 const fs = require('fs');
 
-async function createFile(results, filename) {
-    console.log("Creating the file: " + filename);
+async function createFile(results) {
+    console.log("Call for create file");
 
     let dataForFile = JSON.stringify(results);
-    fs.writeFileSync('./public/json/' + filename + '.json', dataForFile);
 
-    console.log("File created: " + filename);
+    if (dataForFile) {
+        console.log("Creating the file.....");
+
+        fs.writeFileSync('./public/Precos.json', dataForFile);
+
+    }
 }
 
-module.exports = (JSONResults, filename) => createFile(JSONResults, filename);
+module.exports = (JSONResults) => createFile(JSONResults);

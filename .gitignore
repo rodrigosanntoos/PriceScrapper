@@ -1,4 +1,3 @@
 node_modules/
-public/json/PrecosGPU.json
-public/json/PrecosPSU.json
+public/Precos.json
 package-lock.json

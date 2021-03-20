@@ -1,31 +1,20 @@
 const browserObject = require('./Browser.js');
-const scraperControllerGPU = require('./pageControllerGPU.js');
-const scraperControllerPSU = require('./pageControllerPSU.js');
+const scraperController = require('./pageController.js');
 const createFile = require('./FileCreator.js');
 const express = require('express')
 
 
-const runTasks = async (lastTimeout) => {
+const runTasks = (lastTimeout) => {
     //Start the browser and create a browser instance
     let browserInstance = browserObject.startBrowser();
 
     // Pass the browser instance to the scraper controller
-    scraperControllerPSU(browserInstance).then((resultsPSU) => {
+    scraperController(browserInstance).then((results) => {
         //Create the file with the results from the scraper
-        createFile(resultsPSU, 'PrecosPSU');
-
-        scraperControllerGPU(browserInstance).then((resultsGPU) => {
-            //Create the file with the results from the scraper
-            createFile(resultsGPU, 'PrecosGPU');
-        }).catch(() => {
-            console.log('Error on file creation - Inside')
-        });
-    }).catch(() => {
-        console.log('Error on file creation - Outside');
+        createFile(results);
     });
 
-
-    //Generate a new timeout of up to 10 minutes
+    //Gera um novo timeout de até 10 minutos
     let newTimeout = Math.random() * 1000 * 600;
 
     //If both the last and current timeouts were over 4 minutes, reduce the current timeout time in half
