@@ -1,4 +1,3 @@
-const alerts = [];
 let sinalSonoro = false;
 const buildTable = () => {
     fetch("../json/PrecosPSU.json")
@@ -19,7 +18,6 @@ function buildHtmlTable(selector, myList) {
         filtros.push(checkboxesMarcadas.value);
     }
 
-    let shouldAlert = false;
     sinalSonoro = $('#filtroSonoro').is(':checked');
     //Para cada registro da lista
     for (var i = 0; i < myList.length; i++) {
@@ -40,12 +38,6 @@ function buildHtmlTable(selector, myList) {
             ||
             i === 0
         ) {
-            if (alerts.some(v => {
-                return myList[i][columns[0]].includes(v.Nome)
-                    && Number(myList[i][columns[1]].replace('R$', '').replace('.', '').replace(',', '.')) <= v.Valor
-            })) {
-                shouldAlert = true;
-            }
             let row$ = $('<tr/>');
 
             //Para cada coluna do registro, indo de 0 a 3 -> Modelo, valor a vista, valor parcelado, Loja. Próximo elemento seria o Link, que não é necessário
@@ -67,12 +59,7 @@ function buildHtmlTable(selector, myList) {
 
                 //Dar append à row
                 row$.append($('<td/>').html(cellValue));
-                if (shouldAlert) {
-                    if (sinalSonoro) {
-                        document.getElementById('audioAlert').play();
-                    }
-                    alert('Um dos seus itens monitorados foi encontrado!');
-                }
+
             }
             //Dar append ao objeto da table
             $(selector).append(row$);
@@ -120,20 +107,6 @@ $(() => {
         $('#atualizarLista').click()
     }, 120000);
 
-    $('#criarAlerta').on('click', () => {
-
-        let nome = $('#filtrokeyWord').val();
-        let valor = $('#filtroValue').val()
-        alerts.push({
-            Nome: nome,
-            Valor: valor
-        });
-        $('#containerMonitoramento').append('<p><b>Palavra chave:</b> ' + nome + '. <b>Valor:</b> ' + valor + ' </p>');
-        $('#filtrokeyWord').val('');
-        $('#filtroValue').val('');
-
-    })
-
     $("#sliderWatts").slider({
         range: true,
         min: 500,
@@ -143,6 +116,8 @@ $(() => {
             $("#wattsFilter").val(ui.values[0] + "W - " + ui.values[1] + "W");
         }
     });
+
+    //Apenas para carregar os valores pela primeira vez em tela
     $("#wattsFilter").val($("#sliderWatts").slider("values", 0) +
         "W - " + $("#sliderWatts").slider("values", 1) + "W");
 })
