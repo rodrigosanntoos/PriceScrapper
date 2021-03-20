@@ -1,7 +1,7 @@
 const alerts = [];
 let sinalSonoro = false;
 const buildTable = () => {
-    fetch("../Precos.json")
+    fetch("../json/PrecosGPU.json")
         .then(response => response.json())
         .then(mylist => {
             buildHtmlTable('#PrecosGPU', mylist);
