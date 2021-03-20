@@ -3,7 +3,7 @@ const scraperTerabyteVGA = require('./Scrapers/VGA/ScraperTerabyteVGA')
 const scraperPichauVGA = require('./Scrapers/VGA/ScraperPichauVGA');
 const scraperGKInfoStoreVGA = require('./Scrapers/VGA/ScraperGKInfoStoreVGA');
 const scraperAmazonVGA = require('./Scrapers/VGA/ScraperAmazonVGA');
-const scraperFGTecVGA = require('./Scrapers/VGA/ScraperFGTec');
+const scraperFGTecVGA = require('./Scrapers/VGA/ScraperFGTecVGA');
 
 async function scrapeAll(browserInstance) {
     let browser;

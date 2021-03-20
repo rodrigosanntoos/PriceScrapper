@@ -24,22 +24,22 @@ const scraperObject = {
 
 
 
-                            //isAvailable = Verifica se existem classes que indicam item indisponível
+                            //isAvailable = Check if there are any classes indicating an item not available
                             const isAvailable = result.getElementsByClassName('jLtPVV').length === 0;
                             const expressoesRemovidas = ['Quadro', 'Osprey', 'Conferencia', 'Titan', 'Expansora', 'Screen Share', 'Radeon Pro', 'Microfone', 'Suporte', 'GT 710', 'GT 730', 'R5 2020', 'Cabo de extensão', 'G210', 'R7 240', 'GT 1030', ' 1GB', ' 2GB', ' 3GB', ' 4GB', '1050Ti', '1050', 'RX 550 ', 'Case para', 'Conferência'];
 
-                            //Se um item não está disponível, indica que é a última página de resultados
+                            //If an item is not available, indicates it is the last page of results
                             if (!isAvailable) {
                                 resultsInterno.foundUnavailable = true;
                             } else {
 
-                                //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
+                                //Save the HTML values on variables
                                 const productName = result.getElementsByClassName('item-nome')[0].innerText;
                                 const productValue = result.getElementsByClassName('qatGF')[0].innerText.replace('R$ ', '').replace('.', '').replace(',', '.');
                                 const productValueInstallments = result.getElementsByClassName('ksiZrQ')[0].innerText.replace('R$', '').replace('.', '').replace(',', '.');
                                 const productLink = 'https://www.kabum.com.br' + result.getElementsByClassName('dIEkef')[0].getElementsByTagName('a')[0].getAttribute('href');
 
-                                //Se o item verificado estiver disponível e não consta nas expressões removidas, salva no vetor
+                                //If the item is not ignored according to the keywords, add to the array
                                 if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase()))) {
                                     resultsInterno.arrayValues.push({
                                         Modelo: productName,

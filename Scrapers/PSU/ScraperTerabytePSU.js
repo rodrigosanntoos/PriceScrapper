@@ -24,14 +24,14 @@ const scraperObject = {
 
 
 
-                            //isAvailable = Verifica se existem classes que indicam item indisponível
+                            //isAvailable = Check if there are classes indicating an unavailable item
                             const isAvailable = result.getElementsByClassName('tbt_esgotado').length === 0;
 
-                            //Se um item não está disponível, indica que é a última página de resultados
+                            //If an item is not available, indicates that it is the last page of results
                             if (!isAvailable) {
                                 resultsInterno.foundUnavailable = true;
                             } else {
-                                //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
+                                //Save the HTML values on variables
                                 const productName = result.getElementsByClassName('prod-name')[0].innerText;
                                 let productWatts = productName.match(/[0-9]{3,4}W/i);
 
@@ -46,7 +46,7 @@ const scraperObject = {
                                 const productValueInstallments = String((parseFloat(productValueInstallmentsString.replace('R$', '').replace('.', '')) * 12).toFixed(2)).replace(',', '.');
 
                                 if (Number(productWatts[0].replace('W', '').replace('w', '')) >= 500 && productName.includes('80')) {
-                                    //Se o item verificado estiver disponível salva no vetor
+                                    //Saves the item information on the array
                                     resultsInterno.arrayValues.push({
                                         Modelo: productName,
                                         ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),

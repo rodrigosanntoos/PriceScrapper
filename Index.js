@@ -21,15 +21,15 @@ const runTasks = async (lastTimeout) => {
     });
 
 
-    //Gera um novo timeout de até 10 minutos
+    //Generate a new timeout of up to 10 minutes
     let newTimeout = Math.random() * 1000 * 600;
 
-    //Se o último timeout foi superior à 4min, e esse também é: Reduz o novo pela metade
+    //If both the last and current timeouts were over 4 minutes, reduce the current timeout time in half
     if (lastTimeout > 240000 && newTimeout > 240000) {
         newTimeout = newTimeout / 2;
     };
 
-    //Roda a function novamente após o timeout
+    //Runs the funciton again after the timeout
     setTimeout(() => {
         runTasks(newTimeout);
     }, newTimeout);

@@ -7,9 +7,9 @@ const buildTable = () => {
         });
 }
 
-// Monta a table HTML a partir do JSON
+// Build the HTML table from the prices JSON
 function buildHtmlTable(selector, myList) {
-    //Adiciona os headers
+    //Add the headers
     let columns = addAllColumnHeaders(myList, selector);
     let minWatts = $("#sliderWatts").slider("values", 0);
     let maxWatts = $("#sliderWatts").slider("values", 1);
@@ -19,10 +19,10 @@ function buildHtmlTable(selector, myList) {
     }
 
     sinalSonoro = $('#filtroSonoro').is(':checked');
-    //Para cada registro da lista
+    //For each record of the list
     for (var i = 0; i < myList.length; i++) {
 
-        //Traz somente as placas do filtro, ou todas, caso marcado o checkbox de todas
+        //Show only the records according to the user filter
         if (
             (
                 parseInt(myList[i][columns[5]].replace('W', '')) >= minWatts
@@ -40,28 +40,28 @@ function buildHtmlTable(selector, myList) {
         ) {
             let row$ = $('<tr/>');
 
-            //Para cada coluna do registro, indo de 0 a 3 -> Modelo, valor a vista, valor parcelado, Loja. Próximo elemento seria o Link, que não é necessário
+            //For each column of the record, add the fields to the screen. Skipping the index 4, which is th link
             for (let colIndex = 0; colIndex <= 5; colIndex++) {
                 let cellValue;
                 if (colIndex === 4) {
                     continue;
                 }
-                //Se for a primeira coluna, será o modelo onde é necessário adicionar o link
+                //If it's the first column, the link will be added
                 if (colIndex === 0) {
                     cellValue = '<a href="' + myList[i][columns[4]] + '">' + myList[i][columns[colIndex]] + '</a>';
-                    //Caso contrário, apenas adicionar o conteúdo em tela
+                //Otherwise, just add the content
                 } else {
                     cellValue = myList[i][columns[colIndex]];
                 }
 
-                //Se for nulo, adicionar string vazia
+                //If it's null, add an empty string
                 if (cellValue == null) cellValue = "";
 
-                //Dar append à row
+                //Append the row
                 row$.append($('<td/>').html(cellValue));
 
             }
-            //Dar append ao objeto da table
+            //Append the table
             $(selector).append(row$);
         }
     }
@@ -73,40 +73,46 @@ function addAllColumnHeaders(myList, selector) {
     var columnSet = [];
     var headerTr$ = $('<tr/>');
 
-    //Pega o primeiro objeto do array de JSON
+    //Grabs the first object from the JSON Array
     var rowHash = myList[0];
-    //Pra cada campo do objeto
+    //For each field of the object
     for (var key in rowHash) {
-        //Adiciona o campo ao columnSet
+        //Add the field to the columnSet
         columnSet.push(key);
-        //Se for o campo "Link", não adiciona como header pois será linkado no modelo
+        //If the field is "Link" don't add as header because it'll be linked on the model
         if (key !== 'Link') {
             headerTr$.append($('<th/>').html(key));
         }
     }
 
-    //Dá append no header
+    //Append to the header
     $(selector).append(headerTr$);
 
-    //Retorn a informação das colunas
+    //Return the columns info
     return columnSet;
 }
 
 
+//Remove all the records from the table
 const deleteTable = () => {
     $('#PrecosPSU').empty();
 }
 
 $(() => {
+    
+    //Listener for clicking on the update button
     $('#atualizarLista').on('click', () => {
         deleteTable();
         buildTable();
     })
 
+    // Updates the list every 2 minutes
     setInterval(() => {
         $('#atualizarLista').click()
     }, 120000);
 
+
+    // Creates the slider for the Watts filter
     $("#sliderWatts").slider({
         range: true,
         min: 500,
@@ -117,7 +123,7 @@ $(() => {
         }
     });
 
-    //Apenas para carregar os valores pela primeira vez em tela
+    //Load the slider values on the screen when the page is loaded
     $("#wattsFilter").val($("#sliderWatts").slider("values", 0) +
         "W - " + $("#sliderWatts").slider("values", 1) + "W");
 })

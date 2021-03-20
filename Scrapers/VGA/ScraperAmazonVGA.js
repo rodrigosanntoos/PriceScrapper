@@ -29,17 +29,16 @@ const scraperObject = {
                         document.querySelectorAll('.s-result-item').forEach((result) => {
                             const expressoesRemovidas = ['Quadro', 'Osprey', 'Conferencia', 'Titan', 'Expansora', 'Screen Share', 'Radeon Pro', 'Microfone', 'Suporte', 'GT 710', 'GT 730', 'R5 2020', 'Cabo de extensão', 'G210', 'R7 240', 'GT 1030', ' 1GB', ' 2GB', ' 3GB', ' 4GB', '1050Ti', '1050', 'RX 550 ', 'Case para', 'Conferência'];
 
-                            //isAvailable = Verifica se existem classes que indicam o preço
+                            //isAvailable = Check if there are classes indicating the price
                             const isAvailable = result.getElementsByClassName('a-price-whole').length > 0;
 
-                            //Se está disponível, adiciona aos resultados
                             if (isAvailable) {
-                                //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
+                                //Save the HTML values on variables
                                 const productName = result.getElementsByTagName('h2')[0].getElementsByTagName('a')[0].getElementsByTagName('span')[0].innerText;
                                 const productValue = result.getElementsByClassName('a-price-whole')[0].innerText.replace('.', '') + '.' + result.getElementsByClassName('a-price-fraction')[0].innerText;
                                 const productLink = 'https://www.amazon.com.br' + result.getElementsByTagName('h2')[0].getElementsByTagName('a')[0].getAttribute('href');
 
-                                //Se o item verificado não for um dos modelos ignorados, adiciona ao vetor
+                                //If the item is not ignored according to the keywords, add to the array
                                 if (!expressoesRemovidas.some(v => productName.toUpperCase().includes(v.toUpperCase())) && result.getElementsByTagName('img')[1] === undefined) {
                                     resultsInterno.arrayValues.push({
                                         Modelo: productName,

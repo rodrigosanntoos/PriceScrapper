@@ -22,16 +22,16 @@ const scraperObject = {
                             foundUnavailable: false
                         };
                         document.querySelectorAll('.product-card').forEach((result) => {
-                            //isAvailable = Verifica se existem classe que indica o botão comprar. Pode existir botão de pré-venda, portanto não pode verificar a classe de indisponível
+                            //isAvailable = Check if there is a class indicating the "Buy" button. There can be a pre-oder button, therefore we can't check the unavailability class.
                             const isAvailable = result.getElementsByClassName('product-buy-button ').length > 0;
 
 
-                            //Se um item não está disponível, indica que é a última página de resultados
+                            //If an item is not available, indicates that it is the last page of results
                             if (!isAvailable) {
                                 resultsInterno.foundUnavailable = true;
                             } else {
 
-                                //Salva valores obtidos no HTML em variáveis para facilitar a reutilização
+                                //Save the HTML values on variables
                                 const productName = result.getElementsByClassName('product-title')[0].getElementsByTagName('h2')[0].innerText;
                                 let productWatts = productName.match(/[0-9]{3,4}W/i);
 
@@ -44,7 +44,7 @@ const scraperObject = {
 
                                 if (Number(productWatts[0].replace('W', '').replace('w', '')) >= 500 && productName.includes('80')) {
 
-                                    //Se o item verificado estiver disponível salva no vetor
+                                    //Saves the item information on the array
                                     resultsInterno.arrayValues.push({
                                         Modelo: productName,
                                         ValorAV: parseFloat(productValue).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),

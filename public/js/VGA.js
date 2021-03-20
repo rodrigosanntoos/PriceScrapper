@@ -8,9 +8,9 @@ const buildTable = () => {
         });
 }
 
-// Monta a table HTML a partir do JSON
+// Build the HTML table from the prices JSON
 function buildHtmlTable(selector, myList) {
-    //Adiciona os headers
+    //Add the headers
     let columns = addAllColumnHeaders(myList, selector);
     const filtros = [];
     for (let checkboxesMarcadas of $('.filterLeft input[type=checkbox]:checked')) {
@@ -23,12 +23,12 @@ function buildHtmlTable(selector, myList) {
 
     let shouldAlert = false;
     sinalSonoro = $('#filtroSonoro').is(':checked');
-    //Para cada registro da lista
+    //For each record of the list
     for (var i = 0; i < myList.length; i++) {
 
         const formattedName = formatName(myList[i][columns[0]]);
         const todasChecked = $('#filtertodas:checked').length > 0;
-        //Traz somente as placas do filtro, ou todas, caso marcado o checkbox de todas
+        //Show only the records according to the user filter
         if (filtros.some(v => formattedName.match(v)) || todasChecked || i === 0) {
 
             if (alerts.some(v => {
@@ -39,30 +39,31 @@ function buildHtmlTable(selector, myList) {
             }
             let row$ = $('<tr/>');
 
-            //Para cada coluna do registro, indo de 0 a 3 -> Modelo, valor a vista, valor parcelado, Loja. Próximo elemento seria o Link, que não é necessário
+            //For each column of the record, add the fields to the screen
             for (let colIndex = 0; colIndex <= 3; colIndex++) {
                 let cellValue;
 
-                //Se for a primeira coluna, será o modelo - onde é necessário adicionar o link
+                //If it's the first column, the link will be added
                 if (colIndex === 0) {
                     cellValue = '<a href="' + myList[i][columns[4]] + '">' + myList[i][columns[colIndex]] + '</a>';
-                    //Caso contrário, apenas adicionar o conteúdo em tela
-                } else {
+                //Otherwise, just add the content
+            } else {
                     cellValue = myList[i][columns[colIndex]];
                 }
 
-                //Se for nulo, adicionar string vazia
+                //If it's null, add an empty string
                 if (cellValue == null) cellValue = "";
 
-                //Dar append à row
+                //Append the row
                 row$.append($('<td/>').html(cellValue));
 
             }
-            //Dar append ao objeto da table
+            //Append the table
             $(selector).append(row$);
         }
     }
 
+    // If a match has been found with keyword and value, shown and message and if checked by the user play a sound.
     if (shouldAlert) {
         if (sinalSonoro) {
             document.getElementById('audioAlert').play();
@@ -76,39 +77,41 @@ function addAllColumnHeaders(myList, selector) {
     var columnSet = [];
     var headerTr$ = $('<tr/>');
 
-    //Pega o primeiro objeto do array de JSON
+    //Grabs the first object from the JSON Array
     var rowHash = myList[0];
-    //Pra cada campo do objeto
+    //For each field of the object
     for (var key in rowHash) {
-        //Adiciona o campo ao columnSet
+        //Add the field to the columnSet
         columnSet.push(key);
-        //Se for o campo "Link", não adiciona como header pois será linkado no modelo
+        //If the field is "Link" don't add as header because it'll be linked on the model
         if (key !== 'Link') {
             headerTr$.append($('<th/>').html(key));
         }
     }
 
-    //Dá append no header
+    //Append to the header
     $(selector).append(headerTr$);
 
-    //Retorn a informação das colunas
+    //Return the columns info
     return columnSet;
 }
 
-
+//Remove all the records from the table
 const deleteTable = () => {
     $('#PrecosGPU').empty();
-    buildTable();
 }
 
+//Format the value for the default use pattern
 const formatValue = (value) => {
     return Number(value.replace('R$', '').replaceAll('.', '').replaceAll(',', '.'));
 }
 
+//Format the name for the default use pattern
 const formatName = (name) => {
     return name.toUpperCase().replaceAll(' ', '');
 }
 
+//Create a new alert
 const saveAlert = (name, value) => {
     alerts.push({
         Nome: formatName(name),
@@ -117,6 +120,7 @@ const saveAlert = (name, value) => {
     $('#containerMonitoramento').append('<p><b>Palavra chave:</b> ' + name + '. <b>Valor:</b> ' + value + ' </p>');
 }
 
+//Read the URL params to create the default alerts
 const readParams = () => {
 
     const url = new URL(window.location.href);
@@ -136,44 +140,48 @@ const readParams = () => {
 }
 
 $(document).ready(() => {
+
+    //Listener for clicking on the update button
     $('#atualizarLista').on('click', () => {
         deleteTable();
+        buildTable();
     })
 
+    //Listener for thew new alert button
     $('#criarAlerta').on('click', () => {
 
-        //Obtem os valores preenchidos pelo usuário
+        //Gets the values filled by the user
         let nome = $('#filtrokeyWord').val();
         let valor = $('#filtroValue').val();
 
-        //Cria o alerta
+        //Creates the alert
         saveAlert(nome, valor);
 
-        //Limpa os valores dos campos
+        //Clear the fields on screen
         $('#filtrokeyWord').val('');
         $('#filtroValue').val('');
 
-        // Pega a URL da página
+        // Gets the page URL
         let url = window.location.href;
 
-        //Coloca os parâmetros, de acordo se já existem outros ou não
+        //Add the alert parameter to the URL
         if (url.indexOf('?') > -1) {
             url += '&' + nome + '=' + valor;
         } else {
             url += '?' + nome + '=' + valor;
         }
 
-        // Atualiza a URL no navegador para ter os parâmetros junto
+        // Updates the browser URL
         window.history.replaceState(null, null, url);
 
     })
 
-    // Atualiza a lista a cada 2 minutos
+    // Updates the list every 2 minutes
     setInterval(() => {
         $('#atualizarLista').click()
     }, 120000);
 
-    //Carrega os alertas salvos na URL
+    //Loads the params saved on the URL
     readParams();
 
 })
