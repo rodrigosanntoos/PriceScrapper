@@ -17,7 +17,11 @@ const runTasks = async (lastTimeout) => {
         scraperControllerGPU(browserInstance).then((resultsGPU) => {
             //Create the file with the results from the scraper
             createFile(resultsGPU, 'PrecosGPU');
+        }).catch(() => {
+            console.log('Error on file creation - Inside')
         });
+    }).catch(() => {
+        console.log('Error on file creation - Outside');
     });
 
 
