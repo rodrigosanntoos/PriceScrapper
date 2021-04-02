@@ -1,4 +1,5 @@
 const alerts = [];
+const linksToOpen = [];
 let sinalSonoro = false;
 const buildTable = () => {
     fetch("../Precos.json")
@@ -10,6 +11,8 @@ const buildTable = () => {
 
 // Build the HTML table from the prices JSON
 function buildHtmlTable(selector, myList) {
+
+    linksToOpen.length = 0;
     //Add the headers
     let columns = addAllColumnHeaders(myList, selector);
     const filtros = [];
@@ -23,6 +26,8 @@ function buildHtmlTable(selector, myList) {
 
     let shouldAlert = false;
     sinalSonoro = $('#filtroSonoro').is(':checked');
+    openLinksInNewTab = $('#openLinksCheckbox').is(':checked');
+
     //For each record of the list
     for (var i = 0; i < myList.length; i++) {
 
@@ -36,6 +41,9 @@ function buildHtmlTable(selector, myList) {
                     && formatValue(myList[i][columns[1]]) <= v.Valor
             })) {
                 shouldAlert = true;
+                if  (openLinksInNewTab) {
+                    linksToOpen.push(myList[i][columns[4]]);
+                }
             }
             let row$ = $('<tr/>');
 
@@ -46,8 +54,8 @@ function buildHtmlTable(selector, myList) {
                 //If it's the first column, the link will be added
                 if (colIndex === 0) {
                     cellValue = '<a href="' + myList[i][columns[4]] + '">' + myList[i][columns[colIndex]] + '</a>';
-                //Otherwise, just add the content
-            } else {
+                    //Otherwise, just add the content
+                } else {
                     cellValue = myList[i][columns[colIndex]];
                 }
 
@@ -69,6 +77,11 @@ function buildHtmlTable(selector, myList) {
             document.getElementById('audioAlert').play();
         }
         alert('Um dos seus itens monitorados foi encontrado!');
+        if (openLinksInNewTab) {
+            linksToOpen.forEach((element, idx) => {
+                window.open(element);
+            })
+        }
     }
 
 }
