@@ -15,10 +15,10 @@ const runTasks = (lastTimeout) => {
     });
 
     //Gera um novo timeout de até 10 minutos
-    let newTimeout = Math.random() * 1000 * 600;
+    let newTimeout = Math.random() * 1000 * 200;
 
     //If both the last and current timeouts were over 4 minutes, reduce the current timeout time in half
-    if (lastTimeout > 240000 && newTimeout > 240000) {
+    if (lastTimeout > 120000 && newTimeout > 120000) {
         newTimeout = newTimeout / 2;
     };
 
