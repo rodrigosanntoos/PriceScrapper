@@ -1,6 +1,8 @@
 const alerts = [];
 const linksToOpen = [];
-let sinalSonoro = false;
+let sinalSonoro = true;
+let playAlert = false;
+
 const buildTable = () => {
   fetch("../Precos.json")
     .then((response) => response.json())
@@ -47,6 +49,7 @@ function buildHtmlTable(selector, myList) {
           );
         })
       ) {
+        console.log(formattedName);
         shouldAlert = true;
         if (openLinksInNewTab) {
           linksToOpen.push(myList[i][columns[4]]);
@@ -85,9 +88,10 @@ function buildHtmlTable(selector, myList) {
   // If a match has been found with keyword and value, shown and message and if checked by the user play a sound.
   if (shouldAlert) {
     if (sinalSonoro) {
+      playAlert = true;
       document.getElementById("audioAlert").play();
     }
-    alert("Um dos seus itens monitorados foi encontrado!");
+    // alert("Um dos seus itens monitorados foi encontrado!");
     if (openLinksInNewTab) {
       linksToOpen.forEach((element, idx) => {
         window.open(element);
@@ -166,6 +170,8 @@ const readParams = () => {
 };
 
 $(document).ready(() => {
+  $("#stopAlert").hide();
+
   //Listener for clicking on the update button
   $("#atualizarLista").on("click", () => {
     deleteTable();
@@ -199,10 +205,24 @@ $(document).ready(() => {
     window.history.replaceState(null, null, url);
   });
 
+  $("#stopAlert").on("click", () => {
+    playAlert = false;
+    $("#stopAlert").hide();
+  });
+
   // Updates the list every 2 minutes
   setInterval(() => {
     $("#atualizarLista").click();
-  }, 120000);
+  }, 60000);
+
+  setInterval(() => {
+    if (playAlert) {
+      document.getElementById("audioAlert").play();
+      $("#stopAlert").show();
+    } else {
+      $("#stopAlert").hide();
+    }
+  }, 5000);
 
   //Loads the params saved on the URL
   readParams();

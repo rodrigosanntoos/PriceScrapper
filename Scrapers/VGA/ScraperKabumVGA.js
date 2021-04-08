@@ -50,6 +50,7 @@ const scraperObject = {
                   "RX 550 ",
                   "Case para",
                   "Conferência",
+                  "Riser",
                 ];
 
                 //If an item is not available, indicates it is the last page of results

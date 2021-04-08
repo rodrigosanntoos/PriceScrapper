@@ -46,15 +46,18 @@ const scraperObject = {
                   "G210",
                   "R7 240",
                   "GT 1030",
-                  " 1GB",
-                  " 2GB",
-                  " 3GB",
-                  " 4GB",
+                  "1GB",
+                  "Elgato",
+                  "2GB",
+                  "3GB",
+                  "4GB",
                   "1050Ti",
                   "1050",
                   "RX 550 ",
                   "Case para",
                   "Conferência",
+                  "3 GB",
+                  "GTX1060",
                 ];
 
                 //isAvailable = Check if there are classes indicating the price
