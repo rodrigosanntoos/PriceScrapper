@@ -51,6 +51,9 @@ const scraperObject = {
                   "Case para",
                   "Conferência",
                   "Riser",
+                  "R5 220",
+                  "GTX 1650",
+                  "GTX 1660 OC",
                 ];
 
                 //If an item is not available, indicates it is the last page of results

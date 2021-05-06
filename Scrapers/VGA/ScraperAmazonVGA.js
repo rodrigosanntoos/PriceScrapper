@@ -58,6 +58,8 @@ const scraperObject = {
                   "Conferência",
                   "3 GB",
                   "GTX1060",
+                  "RX 550",
+                  "GTX 1660 OC",
                 ];
 
                 //isAvailable = Check if there are classes indicating the price
